@@ -1,0 +1,54 @@
+{
+  "version": "2.1",
+  "buildDate": "2026-03-08T18:10:00.000Z",
+  "totalImagesAnalyzed": 72,
+  "masterQuality": "ULTRA-AAA Professional Casino Slot Asset. Hyper-realistic 3D octane render, Cinematic studio lighting, Masterful volumetric depth with clear Ambient Occlusion. Exceptional surface detailing, perfectly beveled edges, crisp micro-finishes. Luxury commercial polish, zero blur, maximum sharpness.",
+  "categoryRules": {
+    "symbols": {
+      "character_symbols": "Highest value icons: Cinematic semi-realistic 3D characters, expressive features, individual hairs/scales visible, dramatic studio lighting, floating magical particles or energy aura, extremely complex textures.",
+      "high_value_items": "Premium props: Ornate 3D objects like crowns, shields, or artifacts. Meticulous material rendering (polished gold, refractive gems), high detail density, rich specular highlights, subtle ambient glow.",
+      "low_value_ranks": "Standard Ranks (A, K, Q, J, 10): Stylized thematic typography, bold beveled edges, inlaid with gemstones or metallic textures, thick gold trim, consistent color coding, high readability.",
+      "special_symbols": "Wild, Scatter, Bonus: High-contrast pulsing glows, shimmering motion-blurred particles, unique ornate frames (starbursts or crystalline), vibrant energy discharges, large bold clear text.",
+      "background_treatment": "Consistent symbol backing: Radial gradients, transparent with inner glow, or rounded stone/metal tablets. Desaturated to ensure symbol pop-out."
+    },
+    "pillar": {
+      "structural_logic": "Solid vertical volume, 3-part construction (Base, Shaft, Capital). Must match Reel Frame material 100%.",
+      "lighting_and_depth": "Top-down key light, deep side shadows for Parallax depth, rim lighting on vertical edges.",
+      "detail_density": "Surface micro-textures, scratches on metal, cracks in stone, relief carvings."
+    },
+    "materialLibrary": {
+      "stone": "[Mat: Ancient monolithic weathered stone, deep intricate hand-carved reliefs, Sub-surface scattering, sharp beveled edges, tactical moisture/moss details]",
+      "gold": "[Mat: Polished high-gloss 24k solid gold, intense Anisotropic specular glints, rich realistic amber reflections, microscopic surface imperfections for realism]",
+      "neon": "[Mat: High-energy emissive translucent glass, internal photonic glowing cores, vibrant electric blue/magenta plasma discharge, subtle lens flares]",
+      "wood": "[Mat: Lacquered dark mahogany, deep three-dimensional grain textures, warm satin amber reflections, hand-polished ornate scrollwork with depth]"
+    },
+    "assetEvolution": {
+      "normal": "Base: Clean materials, standard lighting, no particles, standard trim.",
+      "high": "Evolution (+25% Detail): Added rim lighting, subtle glow, inlaid small gemstones, metallic accents.",
+      "legend": "Epic (+50% Detail): Intense energy aura, floating magical debris, multi-layered ornate framing, dramatic dynamic speculars."
+    },
+    "reel_frame": {
+      "hollow_logic": "CRITICAL: Pure solid black hollow center (#000000), absolute emptiness in middle. Boundary must be sharp with a subtle inner emissive glow/bloom reflecting off the frame edge.",
+      "border_construction": "Multi-layered ornate architectural frame. Features deep beveled inner edges, consistent premium materials, and horizontal/vertical symmetry. Incorporate soft atmospheric energy light-paths or neon-tubing nested within the frame structure.",
+      "corner_ornaments": "ULTRA-DETAILED: Iconic symmetrical 3D sculptures or large glowing gems on all four corners. Must feature dramatic specular highlights and intricate decorative filigree that extends slightly into the frame segments."
+    },
+    "symbol_splitting": {
+      "icon_body": "CRITICAL: No text or typography allowed. Pure 3D object/character rendering, centered composition, high-end material polish, shadow layer included for depth.",
+      "word_overlay": "3D Stylized Typography: Must match Theme DNA material (e.g. Aztec Gold). Beveled edges, high-gloss finish, slight perspective to match Icon Body, separate from object.",
+      "magic_layers": "Atmospheric FX: High-quality translucent glows, floating particles, energy waves, or light beams. Must enhance the silhouette without obscuring the Icon/Word layers."
+    }
+  },
+  "compositionRules": {
+    "gridRatio": "70-75% Screen Coverage",
+    "headerMaxHeight": "12% Canvas Height",
+    "baseMaxHeight": "15% Canvas Height",
+    "spinButton": "Prominent, thematic circular design"
+  },
+  "renderwolfStyles": {
+    "classic-chinese": "Classic Chinese Slot style, vibrant red and gold theme, ornate traditional patterns, high-gloss 3D textures.",
+    "clay": "Clay Slots style, handcrafted claymation aesthetic, soft matte textures, charmingly imperfect surfaces, playful 3D forms.",
+    "polished-2d-toon": "Polished 2D Toon Render style, crisp vector-like outlines, vibrant cell shading, high-end mobile game aesthetic.",
+    "soft-volumetric-3d": "Soft Volumetric 3D Cartoon style, puffy rounded forms, gentle ambient lighting, subsurface scattering effect, friendly toy-like appearance.",
+    "pixel": "Retro Pixel Art style, clean 16-bit aesthetic, deliberate square brush strokes, limited but punchy color palette, nostalgic game vibe."
+  }
+}

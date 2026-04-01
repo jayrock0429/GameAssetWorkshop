@@ -1,0 +1,11 @@
+{
+  "conflict_strategy": "overwrite",
+  "supported_extensions": [
+    ".png",
+    ".jpg"
+  ],
+  "target_dir": "D:\\Work\\SL2571(\u91d1\u864e\u723a)\\\u6e2c\u8a66\u7528\\\u591a\u8a9e\u7cfb",
+  "watch_dirs": [
+    "D:\\Work\\SL2571(\u91d1\u864e\u723a)\\\u6e2c\u8a66\u7528"
+  ]
+}

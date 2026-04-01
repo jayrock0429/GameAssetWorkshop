@@ -1,0 +1,53 @@
+    def run_fully_autonomous(self, requirement, psd_path=None, layout_mode="Cabinet", mock=False, style="3D_Premium", symbol_list=None, style_override=None):
+        print(f"\n[ENGINE] Starting Autonomous Run for: {requirement}")
+        self.output_dir = os.path.join(self.output_root, f"{requirement}_{int(time.time())}")
+        os.makedirs(self.output_dir, exist_ok=True)
+        
+        results = {}
+        sanitized_theme = self._sanitize_filename(requirement)
+        
+        # 1. Background
+        bg_prompt = self.generate_component_prompts(requirement, "Background", style_profile=style, layout_mode=layout_mode)
+        bg_path = os.path.join(self.output_dir, f"{sanitized_theme}_BG.png")
+        self.generate_image_from_api(bg_prompt, bg_path, mock=mock, layout_mode=layout_mode)
+        results["background"] = bg_path
+        
+        # 2. UI Components
+        for sub in ["UI_Header", "UI_Base", "UI_Pillar"]:
+            p = self.generate_component_prompts(requirement, sub, layout_mode=layout_mode)
+            path = os.path.join(self.output_dir, f"{sanitized_theme}_{sub}.png")
+            self.generate_image_from_api(p, path, mock=mock, layout_mode=layout_mode)
+            results[sub.lower()] = self.process_transparency(path)
+
+        # 3. Symbols
+        results["symbols"] = {}
+        targets = symbol_list or ["SYM_1", "WILD", "SCATTER"]
+        for s in targets:
+            p = self.generate_component_prompts(requirement, "Symbol", subtype=s, layout_mode=layout_mode)
+            path = os.path.join(self.output_dir, f"{sanitized_theme}_{s}.png")
+            self.generate_image_from_api(p, path, mock=mock, layout_mode=layout_mode)
+            results["symbols"][s] = self.process_transparency(path)
+
+        # 4. Preview
+        preview_path = self.compose_preview_image(results, requirement, layout_mode=layout_mode)
+        print(f"[OK] Autonomous Run Finished. Preview: {preview_path}")
+        return preview_path
+
+    def run_workflow(self, interactive=True):
+        theme = input("Theme: ") if interactive else self.theme
+        self.run_fully_autonomous(theme, layout_mode="H5_Mobile", mock=False)
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("theme", nargs="?", default="Professional Slot")
+    parser.add_argument("--auto", action="store_true")
+    parser.add_argument("--mock", action="store_true")
+    parser.add_argument("--layout", default="Cabinet")
+    args = parser.parse_args()
+
+    creator = SlotAICreator(args.theme)
+    if args.auto:
+        creator.run_fully_autonomous(args.theme, layout_mode=args.layout, mock=args.mock)
+    else:
+        creator.run_workflow(interactive=True)

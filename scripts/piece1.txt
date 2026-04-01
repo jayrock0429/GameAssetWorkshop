@@ -1,0 +1,354 @@
+import os
+import sys
+import subprocess
+import time
+from psd_tools import PSDImage
+from PIL import Image, ImageFilter, ImageDraw, ImageOps
+import io
+import json
+from dotenv import load_dotenv
+
+# [Phase 4.5] Import Phase 4 Production Intelligence Modules
+from layout_optimizer import SmartLayoutEngine
+from engine_validator import EngineSpecValidator
+from file_organizer import BatchNamingIntelligence
+from psd_auto_assembly import PSDAutoAssembly
+
+# [PSD Constraint] Import Layout Constraint Extractor
+try:
+    from psd_constraint_extractor import PSDConstraintExtractor
+    _HAS_CONSTRAINT_EXTRACTOR = True
+except ImportError:
+    _HAS_CONSTRAINT_EXTRACTOR = False
+
+# Initialize environment variables at module level
+script_dir = os.path.dirname(os.path.abspath(__file__))
+env_path = os.path.join(os.path.dirname(script_dir), ".env")
+load_dotenv(env_path, override=True)
+
+# --- AAA Quality Booster Standards ---
+# [V3.1] Enhanced 3A Standard with Ambient Occlusion & Contact Shadows
+_AAA_GLOBAL_RENDER = ", hyper-realistic 3D render, Unreal Engine 5 style, Octane render, deep ambient occlusion, Ray-traced contact shadows, specular occlusion, macro micro-detailing, professional studio lighting, depth of field, sharp textures, high-poly mesh, NO 2D flat vector art"
+
+# [V3.2] Zero-Perspective UI Render (PRIORITY: FLATNESS OVER SPACE)
+# Stripped keywords: "Unreal Engine 5", "high-poly mesh", "depth of field" to avoid AI perspective hallucination.
+_AAA_UI_RENDER = ", 100% FLAT 2D ORTHOGRAPHIC PROJECTION, ABSOLUTE ZERO PERSPECTIVE, FRONT-ON VIEW, NO ANGLES, multi-layered architectural metal and glass materials, thick physical beveled edges, polished glossy finish, high-contrast studio rim lighting, isolated on solid background, perfectly symmetrical"
+
+# UI Specific (Headers, Base, Pillars)
+_AAA_UI_SPEC = ", metallic bezels with high-contrast reflections, internal digital LED display panels, premium metallic materials, blank interface (NO TEXT)"
+
+# [V3.2] UI Negative Prompt Matrix (Mandatory for UI)
+_UI_NEGATIVE_PROMPT = ", perspective, angled view, tilt, vanishing point, three-dimensional slant, camera depth, isometric distortion, receding edges, Z-depth distortion, 3D perspective"
+
+# Symbols Standard
+# [V3.1] Enhanced Brushed Gold & Internal Gem Glow
+_AAA_SYMBOL_SPEC = ", chunky 3D model with physical thickness, isometric perspective, heavy beveled edges, aggressive high-contrast rim lighting, brushed gold metal texture, internal gem glow, sub-surface scattering, hyper-polished crystal materials, isolated on solid dark background"
+
+#  (Mascot)
+# Q  ()
+_AAA_MASCOT_SPEC = ", 3D render, stylized anthropomorphic mascot, winner energy expression, premium texture contrast (silk/fur/gold), wealth particles (glowing coins/sparkles), volumetric rim lighting, isolated on solid background"
+
+# --- [V3.0]  (General Slot Engine Standards) ---
+
+# Module 1: Structural Constraint Engine
+_STRUCTURAL_CONSTRAINTS = {
+    "UI_Header": "A wide horizontal banner structure, spanning full screen width, top interface panel, extreme wide aspect ratio (16:9 or wider), FLAT FRONT VIEW, NO PERSPECTIVE, NO STANDALONE CHARACTERS, ",
+    "UI_Base": "A wide horizontal control panel structure, bottom interface console, spanning full screen width, wide aspect ratio, featuring placeholder zones for buttons, FLAT FRONT VIEW, NO PERSPECTIVE, NO ANGLES, ",
+    "UI_Pillar": "A tall vertical column structure, side frame element, spanning full screen height, tall aspect ratio, standing vertically, FLAT FRONT VIEW, NO PERSPECTIVE, ",
+    "Mascot": "A full body character, standing on the left side, facing right towards the center, clear silhouette, ",
+    "Symbol": "A single isolated 3D object, centered composition, isometric perspective, chunky physical volume, "
+}
+
+#  (The Visual Hierarchy Engine)
+#  Tier 
+_TIER_VISUAL_ENHANCERS = {
+    "M1_Hero": "Massive scale, most prominent element, intense hero lighting, dynamic cinematic pose, elaborate background aura effect, highest level of detail, unmatched visual impact, ",
+    "High_Pay": "Large scale, premium material (polished gold, glowing gemstones), heavy 3D bevel, prominent studio rim light, ornate frame details, high value luxury feel, ",
+    "Low_Pay": "Standard scale, simple clear material (clean metal, matte stone), moderate 3D bevel, subtle ambient lighting, no complex background elements, highly readable, "
+}
+# -----------------------------------------------------------
+
+print("DEBUG: SlotAICreator V2 loaded.")
+
+class SlotAICreator:
+    def __init__(self, theme=None):
+        self.theme = theme
+        # [V14.1] Dynamic path derivation to support any environment
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.base_dir = os.path.dirname(script_dir) # Project root
+        self.output_root = os.path.join(self.base_dir, "output")
+        self.output_dir = self.output_root # Default, will be overridden per spin
+        self.layout_info = {} # Layout Bounds
+        self.vision_sync_context = "" # [V3.1] Benchmark Feature Sync context
+
+        # [V13.0] 
+        self.styles_config = {
+            "3D_Premium": "High-fidelity 3D rendering, PBR materials, cinematic lighting",
+            "Anime_Stylized": "Anime-style cel-shading, vibrant colors, bold outlines",
+            "PBR_Realistic": "Photorealistic PBR, ultra-detailed textures, natural lighting",
+            "Flat_Modern": "Flat design, minimalist, bold colors, geometric shapes"
+        }
+        
+        # 5x3 Default Layout Constants
+        self.default_5x3 = {
+            "symbol_size": 160,
+            "spacing": 10,
+            "grid_startX": 220,
+            "grid_startY": 110,
+            "grid_width": 840,
+            "grid_height": 500,
+            "columns": 5,
+            "rows": 3
+        }
+
+        # [V20.1] Production_V1 Layout (Matched to KnockoutClash PSD)
+        self.production_v1 = {
+            "symbol_w": 343,
+            "symbol_h": 203,
+            "spacing": 0, # PSD 
+            "grid_startX": 420,
+            "grid_startY": 157,
+            "grid_width": 1719,
+            "grid_height": 1003,
+            "columns": 5,
+            "rows": 5,
+            "canvas_w": 2560,
+            "canvas_h": 1440
+        }
+        
+        # [Phase 4.5] Initialize Production Intelligence Engines
+        self.layout_engine = SmartLayoutEngine()
+        self.spec_validator = EngineSpecValidator()
+        self.naming_engine = BatchNamingIntelligence(self.output_dir)
+        self.psd_assembler = PSDAutoAssembly()
+        self.stop_requested = False 
+        self.layout_constraints = None  
+
+    def sync_from_url(self, url):
+        """[V3.1] Synchronize visual features from benchmark URL"""
+        print(f"DEBUG: [V3.1 Vision Sync] Synchronizing from {url}...")
+        
+        # [V3.2] Multi-Theme Sync Logic
+        if "ancient-egypt" in url.lower():
+            self.vision_sync_context = (
+                " [BENCHMARK SYNC: RISE OF EGYPT]: UI_Header MUST be a horizontal wide architectural gold frame spanning the top. "
+                "Symbol (Eye of Horus) should be a chunky 3D object with glowing emerald iris set in brushed gold. "
+                "UI MUST be a structural layout, NOT a statue."
+            )
+            print("[OK] Vision Feature Calibrated: Rise of Egypt DNA.")
+        elif "slot%20ui" in url.lower() or "slot-ui" in url.lower():
+            # [V3.2] Global Slot UI DNA - Metal + Digital + Wide Frame
+            self.vision_sync_context = (
+                " [BENCHMARK SYNC: AAA SLOT UI]: UI MUST be a WIDE BANNER spanning full screen width. "
+                "Materials: Multi-layered beveled metal borders (Polished Gold/Chrome) wrapping dark digital glass panels. "
+                "Details: Glowing LED edges, glassmorphism, heavy 3D volume, perfectly symmetrical architecture."
+            )
+            print("[OK] Vision Feature Calibrated: Global 3A Slot UI DNA (Wide Frame + Digital Metal).")
+        else:
+            self.vision_sync_context = " [BENCHMARK SYNC]: Focus on deep 3D bevels, studio lighting, and material physical depth."
+        
+        return self.vision_sync_context
+        
+    def analyze_excel_structure_with_ai(self, excel_path):
+        """[V16.0]  AI  Excel """
+        import pandas as pd
+        gemini_key = os.environ.get("GEMINI_API_KEY")
+        if not gemini_key: return None
+
+        try:
+            xl = pd.ExcelFile(excel_path)
+            # [V17.1]  AI 
+            snapshot = {}
+            for name in xl.sheet_names:
+                df = xl.parse(name, nrows=15).dropna(how='all').fillna("")
+                snapshot[name] = df.to_dict(orient='records')
+
+            from google import genai
+            from google.genai import types
+            client = genai.Client(api_key=gemini_key)
+            
+            prompt = (
+                "You are a Senior Game Producer. Analyze this Excel structure for a slot game project.\n"
+                f"Excel Structure Snapshot: {json.dumps(snapshot, ensure_ascii=False, default=str)[:4000]}\n\n"
+                "Extract the following mapping in JSON format:\n"
+                "1. 'symbol_design_sheet': The sheet name containing ART DESCRIPTIONS (e.g., 'Symbol', 'p').\n"
+                "2. 'name_col': Column index (0-based) for the 'Symbol ID' or 'Name' (e.g., M1, Wild). Look for 'SYM_' prefixes.\n"
+                "3. 'desc_col': Column index (0-based) for the 'Visual Description' (longest text column).\n"
+                "Patterns to look for: Symbol IDs are often in col 1 or 2. Descriptions are often in col 4, 5, or 6.\n"
+                "Return ONLY the JSON."
+            )
+            
+            response = client.models.generate_content(
+                model='gemini-2.5-pro',
+                contents=prompt
+            )
+            # Parse JSON from response
+            res_text = response.text.strip()
+            if "```json" in res_text:
+                res_text = res_text.split("```json")[1].split("```")[0].strip()
+            return json.loads(res_text)
+        except Exception as e:
+            print(f"WARNING: AI Structure Analysis failed: {e}")
+            return None
+
+    def load_styles(self):
+        """Load styles from styles.json"""
+        try:
+            style_path = os.path.join(script_dir, "styles.json")
+            with open(style_path, "r", encoding="utf-8") as f:
+                self.styles_config = json.load(f)
+            print(f"DEBUG: Loaded styles from {style_path}")
+        except Exception as e:
+            print(f"WARNING: Failed to load styles.json: {e}. Using defaults.")
+            self.styles_config = {
+                "3D_Premium": {"prompt": "Professional casino slot game art, cinematic lighting, sharp 3D details, stylized and polished, symmetry, magical glow."},
+                "Anime_Stylized": {"prompt": "Vibrant anime art style, cel-shaded, bold linework, high-contrast, fantasy aesthetic, hand-drawn quality."},
+                "PBR_Realistic": {"prompt": "Ultra-realistic 3D PBR textures, ray-traced reflections, photographic studio lighting, intricate mechanical details."},
+                "Flat_Modern": {"prompt": "Clean vector art, flat design, minimalist shapes, bright solid colors, sharp edges, modern mobile game aesthetic."}
+            }
+
+    def request_stop(self):
+        """[V20.7] Request the engine to stop as soon as possible"""
+        print("[STOP] [ENGINE] Stop signal received. Stopping processing...")
+        self.stop_requested = True
+
+    def ensure_dirs(self):
+        for d in [self.base_dir, self.output_dir]:
+            if not os.path.exists(d):
+                os.makedirs(d)
+                print(f"Created directory: {d}")
+
+    def _reason_prompt(self, request_info):
+        """[V13.0 ]  PG/JILI  DNA"""
+        gemini_key = os.environ.get("GEMINI_API_KEY")
+        if not gemini_key:
+            return None
+        
+        # [V13.0]  DNA 
+        dna_config = {}
+        try:
+            dna_path = os.path.join(self.base_dir, "config", "pg_jili_visual_dna.json")
+            if os.path.exists(dna_path):
+                with open(dna_path, 'r', encoding='utf-8') as f:
+                    dna_config = json.load(f)
+        except Exception as e:
+            print(f"WARNING: Failed to load Visual DNA: {e}")
+            
+        try:
+            from google import genai
+            from google.genai import types
+            client = genai.Client(api_key=gemini_key)
+            
+            # [V13.0]  - 
+            metal_kw = ', '.join(dna_config.get('materials', {}).get('metal', {}).get('keywords', ['brushed metal']))
+            gem_kw = ', '.join(dna_config.get('materials', {}).get('gemstone', {}).get('keywords', ['subsurface scattering']))
+            gold_kw = ', '.join(dna_config.get('materials', {}).get('gold', {}).get('keywords', ['warm diffuse']))
+            
+            # [Phase 2]  DNA
+            visual_ref = self.layout_info.get("visual_reference")
+            dynamic_dna_prompt = ""
+            
+            # [Phase 2.5] Style Tuner Override (Highest Priority)
+            tuned_style = self.layout_info.get("tuned_style")
+            if tuned_style:
+                 dynamic_dna_prompt = f"""
+ USER LOCKED STYLE (OVERRIDE):
+- MANDATORY STYLE: {tuned_style}
+- IGNORE default DNA where it conflicts with the above.
+"""
+            elif visual_ref:
+                style_kws = ", ".join(visual_ref.get("style_keywords", []))
+                palette = ", ".join(visual_ref.get("palette", []))
+                materials = ", ".join(visual_ref.get("materials", []))
+                lighting = visual_ref.get("lighting", "Studio")
+                dynamic_dna_prompt = f"""
+ DYNAMIC VISUAL TARGET (FROM REFERENCE IMAGES):
+- STYLE: {style_kws}
+- PALETTE: {palette}
+- MATERIALS: {materials}
+- LIGHTING: {lighting}
+OVERRIDE default DNA with these specific traits if they conflict."""
+
+            # [Phase 3] Check for Variant (Win State / VFX)
+            variant = request_info.get("variant")
+            variant_prompt = ""
+            if variant == "Win_State":
+                 variant_prompt = """
+ VARIANT REQUEST: WIN STATE (ACTION POSE)
+- ACTION: The subject must be bursting with energy, roaring, or activating.
+- VFX: Add heavy bloom, magical particles, electric arcs, or motion blur around the subject.
+- LIGHTING: Intensify the rim light and emissive glow.
+- COMPOSTION: Keep it centered but maximize impact.
+"""
+
+            # [V21.1] UI Frame & Component Constraints (Migrated to Art Bible Knowledge Base)
+            component = request_info.get("component")
+            component_prompt = ""
+            if component:
+                component_prompt = f"""
+ CRITICAL COMPONENT: You are currently generating the '{component}'. 
+You MUST look up the specific constraints for '{component}' in the 'SLOT GAME ART BIBLE (KNOWLEDGE BASE)' provided below and STRICTLY follow all rules defined for it!
+"""
+
+            # [PSD Constraint]  PSD 
+            psd_spec_block = ""
+            if self.layout_constraints:
+                psd_spec_block = self.layout_constraints.to_prompt_spec()
+
+            # [V22.0] Load Slot Art Guidelines from Knowledge Base
+            guidelines_path = os.path.join(self.base_dir, "resources", "slot_art_guidelines.md")
+            v22_guidelines = ""
+            if os.path.exists(guidelines_path):
+                try:
+                    with open(guidelines_path, "r", encoding="utf-8") as f:
+                        v22_guidelines = f.read()
+                except Exception as e:
+                    print(f"WARNING: Failed to read slot_art_guidelines.md: {e}")
+
+            system_instruction = f"""You are an ELITE Art Director for AAA slot games (PG/JILI caliber).
+Your ONLY job is to convert raw requirements into HYPER-SPECIFIC prompts for AI image generation, ensuring they are STRICTLY usable as game development assets. 
+
+=== SLOT GAME ART BIBLE (KNOWLEDGE BASE) ===
+{v22_guidelines}
+============================================
+
+=== CRITICAL ART DIRECTION (MANDATORY) ===
+1. **NO FLAT ART:** Even for "Anime_Stylized" or "Flat_Modern" profiles, you MUST maintain 3D volume, thick beveled edges, and lighting depth. Think "AAA 3D Game with Cel-shading" (like Genshin Impact), NOT 2D vector flash games.
+2. **NO TEXT:** Strictly no letters, numbers, or words on UI.
+3. **PINTEREST QUALITY:** Follow the "Architectural Layering" rule for UI. Frames must look like heavy physical objects with nested layers.
+4. **H5_MOBILE DEPTH:** H5 assets should be "Sleek and Slim" but still possess 3D material depth and high-contrast reflections. Never generate thin 1-pixel paper-like lines.
+5. **UI STRUCTURE:** UI_Header and UI_Base MUST be WIDE BANNERS spanning the full screen width. NO SMALL BLOCKS. Add physical weight with metallic bezels and digital LED panels.
+==========================================
+
+{dynamic_dna_prompt}
+{component_prompt}
+{variant_prompt}
+
+{psd_spec_block}
+
+Return ONLY the final detailed image generation prompt. No conversational text."""
+            
+            prompt_request = f"Requirement: {json.dumps(request_info, ensure_ascii=False)}"
+            
+            response = client.models.generate_content(
+                model='gemini-2.5-pro',
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    temperature=0.7
+                ),
+                contents=prompt_request
+            )
+            
+            final_text = response.text.strip()
+            # [Debug] Capture High-IQ Prompts
+            try:
+                debug_file = os.path.join(self.base_dir, "captured_prompt.txt")
+                with open(debug_file, "a", encoding="utf-8") as f:
+                     f.write(f"\n[AI_REASONED | {request_info.get('variant') or 'Normal'}]\n{final_text}\n" + "-"*50 + "\n")
+                print(f"DEBUG: Captured AI Prompt for {request_info.get('component')}")
+            except: pass
+            
+            return final_text
+        except Exception as e:
+            print(f"WARNING: Reasoning pass failed: {e}")
+            return None

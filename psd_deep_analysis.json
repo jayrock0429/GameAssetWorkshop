@@ -1,0 +1,3988 @@
+{
+  "file_name": "KnockoutClash_basegameL_資產出圖版本.psd",
+  "size": "293.05 MB",
+  "canvas": {
+    "width": 2560,
+    "height": 1440
+  },
+  "layers": [
+    {
+      "name": "Main_UI_Frame",
+      "type": "MergedGroup",
+      "visible": true,
+      "bbox": [
+        -38,
+        11,
+        2775,
+        1440
+      ],
+      "width": 2813,
+      "height": 1429,
+      "merged_components": [
+        "輪框",
+        "遊戲訊息",
+        "共用操作UI",
+        "共用操作UI"
+      ]
+    },
+    {
+      "name": "MG遊戲背景",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        -342,
+        -4,
+        3193,
+        1440
+      ],
+      "width": 3535,
+      "height": 1444,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "圖層 0 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -342,
+            -4,
+            3193,
+            1440
+          ],
+          "width": 3535,
+          "height": 1444,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "曲線 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 0 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -342,
+            -4,
+            3193,
+            1440
+          ],
+          "width": 3535,
+          "height": 1444,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "ab206cefb3edfe046bb34075eb09cef151bda1151f323-bRcSi8 拷貝 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2125,
+            249,
+            2581,
+            932
+          ],
+          "width": 456,
+          "height": 683,
+          "opacity": 255,
+          "blend_mode": "BlendMode.SCREEN"
+        },
+        {
+          "name": "ab206cefb3edfe046bb34075eb09cef151bda1151f323-bRcSi8 拷貝 5",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1906,
+            73,
+            2393,
+            746
+          ],
+          "width": 487,
+          "height": 673,
+          "opacity": 255,
+          "blend_mode": "BlendMode.SCREEN"
+        },
+        {
+          "name": "色相/飽和度 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -64,
+            249,
+            239,
+            950
+          ],
+          "width": 303,
+          "height": 701,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色相/飽和度 2 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            263,
+            68,
+            750,
+            741
+          ],
+          "width": 487,
+          "height": 673,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        }
+      ]
+    },
+    {
+      "name": "FG遊戲背景",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        -342,
+        -4,
+        3193,
+        1552
+      ],
+      "width": 3535,
+      "height": 1556,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "圖層 0 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -342,
+            -4,
+            3193,
+            1440
+          ],
+          "width": 3535,
+          "height": 1444,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "曲線 2 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 0 拷貝 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -342,
+            -4,
+            3193,
+            1440
+          ],
+          "width": 3535,
+          "height": 1444,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 8",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            156,
+            53,
+            467,
+            1385
+          ],
+          "width": 311,
+          "height": 1332,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 9",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -204,
+            220,
+            107,
+            1552
+          ],
+          "width": 311,
+          "height": 1332,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 10",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            246,
+            29,
+            624,
+            1348
+          ],
+          "width": 378,
+          "height": 1319,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 12",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1957,
+            34,
+            2273,
+            1357
+          ],
+          "width": 316,
+          "height": 1323,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 13",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2070,
+            40,
+            2386,
+            1363
+          ],
+          "width": 316,
+          "height": 1323,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 14",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2214,
+            35,
+            2616,
+            1352
+          ],
+          "width": 402,
+          "height": 1317,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 15",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2330,
+            46,
+            3123,
+            1254
+          ],
+          "width": 793,
+          "height": 1208,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        }
+      ]
+    },
+    {
+      "name": "FG遊戲背景 拷貝",
+      "type": "Layer",
+      "visible": false,
+      "bbox": [
+        -342,
+        -4,
+        3193,
+        1453
+      ],
+      "width": 3535,
+      "height": 1457,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL"
+    },
+    {
+      "name": "MG遊戲背景 拷貝",
+      "type": "Layer",
+      "visible": false,
+      "bbox": [
+        -342,
+        -4,
+        3193,
+        1440
+      ],
+      "width": 3535,
+      "height": 1444,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL"
+    },
+    {
+      "name": "character",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        -159,
+        134,
+        549,
+        1563
+      ],
+      "width": 708,
+      "height": 1429,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "FG人物",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            -159,
+            134,
+            549,
+            1563
+          ],
+          "width": 708,
+          "height": 1429,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "大獎fg觸發",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            -112,
+            137,
+            543,
+            1585
+          ],
+          "width": 655,
+          "height": 1448,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "遊戲輪帶範圍",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        420,
+        157,
+        2139,
+        1160
+      ],
+      "width": 1719,
+      "height": 1003,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "輪帶符號對位",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            420,
+            157,
+            2139,
+            1160
+          ],
+          "width": 1719,
+          "height": 1003,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "Reel 1",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                420,
+                157,
+                763,
+                1160
+              ],
+              "width": 343,
+              "height": 1003,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 3",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    420,
+                    157,
+                    763,
+                    360
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 4",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    420,
+                    357,
+                    763,
+                    560
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 5",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    420,
+                    557,
+                    763,
+                    760
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 6",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    420,
+                    757,
+                    763,
+                    960
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 7",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    420,
+                    957,
+                    763,
+                    1160
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Reel 2",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                764,
+                157,
+                1107,
+                1160
+              ],
+              "width": 343,
+              "height": 1003,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 3",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    764,
+                    157,
+                    1107,
+                    360
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 4",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    764,
+                    357,
+                    1107,
+                    560
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 5",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    764,
+                    557,
+                    1107,
+                    760
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 6",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    764,
+                    757,
+                    1107,
+                    960
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 7",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    764,
+                    957,
+                    1107,
+                    1160
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Reel 3",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                1109,
+                157,
+                1451,
+                1160
+              ],
+              "width": 342,
+              "height": 1003,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 3",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1109,
+                    157,
+                    1451,
+                    360
+                  ],
+                  "width": 342,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 4",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1109,
+                    357,
+                    1451,
+                    560
+                  ],
+                  "width": 342,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 5",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1109,
+                    557,
+                    1451,
+                    760
+                  ],
+                  "width": 342,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 6",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1109,
+                    757,
+                    1451,
+                    960
+                  ],
+                  "width": 342,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 7",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1109,
+                    957,
+                    1451,
+                    1160
+                  ],
+                  "width": 342,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Reel 4",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                1452,
+                157,
+                1795,
+                1160
+              ],
+              "width": 343,
+              "height": 1003,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 3",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1452,
+                    157,
+                    1795,
+                    360
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 4",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1452,
+                    357,
+                    1795,
+                    560
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 5",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1452,
+                    557,
+                    1795,
+                    760
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 6",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1452,
+                    757,
+                    1795,
+                    960
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 7",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1452,
+                    957,
+                    1795,
+                    1160
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Reel 5",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                1796,
+                157,
+                2139,
+                1160
+              ],
+              "width": 343,
+              "height": 1003,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 3",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1796,
+                    157,
+                    2139,
+                    360
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 4",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1796,
+                    357,
+                    2139,
+                    560
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 5",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1796,
+                    557,
+                    2139,
+                    760
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 6",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1796,
+                    757,
+                    2139,
+                    960
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "Rectangle 7",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1796,
+                    957,
+                    2139,
+                    1160
+                  ],
+                  "width": 343,
+                  "height": 203,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "輪底",
+      "type": "Layer",
+      "visible": true,
+      "bbox": [
+        422,
+        152,
+        2138,
+        1168
+      ],
+      "width": 1716,
+      "height": 1016,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL"
+    },
+    {
+      "name": "群組 4",
+      "type": "Group",
+      "visible": false,
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "width": 0,
+      "height": 0,
+      "opacity": 255,
+      "blend_mode": "BlendMode.LINEAR_DODGE",
+      "children": [
+        {
+          "name": "色相/飽和度 1",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1903,
+            -440,
+            2502,
+            1426
+          ],
+          "width": 599,
+          "height": 1866,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "色相/飽和度 1 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            115,
+            -440,
+            608,
+            1426
+          ],
+          "width": 493,
+          "height": 1866,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        }
+      ]
+    },
+    {
+      "name": "symbol 拷貝",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        382,
+        37,
+        2139,
+        1273
+      ],
+      "width": 1757,
+      "height": 1236,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "M3 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            382,
+            104,
+            763,
+            360
+          ],
+          "width": 381,
+          "height": 256,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M3 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            382,
+            304,
+            763,
+            560
+          ],
+          "width": 381,
+          "height": 256,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M3 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            382,
+            503,
+            763,
+            759
+          ],
+          "width": 381,
+          "height": 256,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M4",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            1797,
+            759,
+            2138,
+            960
+          ],
+          "width": 341,
+          "height": 201,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M5",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1459,
+            724,
+            1781,
+            1013
+          ],
+          "width": 322,
+          "height": 289,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M5 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1459,
+            924,
+            1781,
+            1213
+          ],
+          "width": 322,
+          "height": 289,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M4 拷貝 2",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            1797,
+            958,
+            2138,
+            1159
+          ],
+          "width": 341,
+          "height": 201,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M7",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            1533,
+            383,
+            1694,
+            547
+          ],
+          "width": 161,
+          "height": 164,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M7 拷貝 2",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            1533,
+            583,
+            1694,
+            747
+          ],
+          "width": 161,
+          "height": 164,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M6 拷貝 3",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            1094,
+            728,
+            1481,
+            1004
+          ],
+          "width": 387,
+          "height": 276,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M6 拷貝 4",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            1094,
+            928,
+            1481,
+            1204
+          ],
+          "width": 387,
+          "height": 276,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "C2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1821,
+            375,
+            2116,
+            544
+          ],
+          "width": 295,
+          "height": 169,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "C2 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1821,
+            575,
+            2116,
+            744
+          ],
+          "width": 295,
+          "height": 169,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M9",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            509,
+            795,
+            660,
+            939
+          ],
+          "width": 151,
+          "height": 144,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M9 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            509,
+            995,
+            660,
+            1139
+          ],
+          "width": 151,
+          "height": 144,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M10 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1542,
+            191,
+            1726,
+            328
+          ],
+          "width": 184,
+          "height": 137,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "C1",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1416,
+            209,
+            1874,
+            625
+          ],
+          "width": 458,
+          "height": 416,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "C1 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1416,
+            409,
+            1874,
+            825
+          ],
+          "width": 458,
+          "height": 416,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M2 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1798,
+            715,
+            2139,
+            960
+          ],
+          "width": 341,
+          "height": 245,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M2 拷貝 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1798,
+            915,
+            2139,
+            1160
+          ],
+          "width": 341,
+          "height": 245,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M1",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1798,
+            90,
+            2139,
+            360
+          ],
+          "width": 341,
+          "height": 270,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M10 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            854,
+            190,
+            1038,
+            327
+          ],
+          "width": 184,
+          "height": 137,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M1 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            766,
+            289,
+            1107,
+            559
+          ],
+          "width": 341,
+          "height": 270,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M1 拷貝 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            766,
+            489,
+            1107,
+            759
+          ],
+          "width": 341,
+          "height": 270,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M2 拷貝 5",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            766,
+            716,
+            1107,
+            961
+          ],
+          "width": 341,
+          "height": 245,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "M2 拷貝 5",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            766,
+            916,
+            1107,
+            1161
+          ],
+          "width": 341,
+          "height": 245,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "WW",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1056,
+            37,
+            1500,
+            474
+          ],
+          "width": 444,
+          "height": 437,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "WW 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1056,
+            237,
+            1500,
+            674
+          ],
+          "width": 444,
+          "height": 437,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "WW 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1056,
+            437,
+            1500,
+            874
+          ],
+          "width": 444,
+          "height": 437,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "WW 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1056,
+            637,
+            1500,
+            1074
+          ],
+          "width": 444,
+          "height": 437,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "WW 拷貝 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1056,
+            836,
+            1500,
+            1273
+          ],
+          "width": 444,
+          "height": 437,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "圖層 19",
+      "type": "Layer",
+      "visible": true,
+      "bbox": [
+        420,
+        157,
+        2139,
+        1161
+      ],
+      "width": 1719,
+      "height": 1004,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL"
+    },
+    {
+      "name": "FG倍數框",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        0,
+        0,
+        2560,
+        1440
+      ],
+      "width": 2560,
+      "height": 1440,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "圖層 25 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2161,
+            225,
+            2456,
+            1066
+          ],
+          "width": 295,
+          "height": 841,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "群組 10",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            2165,
+            242,
+            2437,
+            1051
+          ],
+          "width": 272,
+          "height": 809,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "矩形 6 拷貝 3",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2165,
+                876,
+                2437,
+                1051
+              ],
+              "width": 272,
+              "height": 175,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "矩形 6 拷貝 4",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2165,
+                242,
+                2437,
+                417
+              ],
+              "width": 272,
+              "height": 175,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "矩形 6 拷貝",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2165,
+                414,
+                2437,
+                571
+              ],
+              "width": 272,
+              "height": 157,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "矩形 6 拷貝 2",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2165,
+                568,
+                2437,
+                725
+              ],
+              "width": 272,
+              "height": 157,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "矩形 6 拷貝 2",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2165,
+                722,
+                2437,
+                879
+              ],
+              "width": 272,
+              "height": 157,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        },
+        {
+          "name": "矩形 1 拷貝 6",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2119,
+            156,
+            2459,
+            1157
+          ],
+          "width": 340,
+          "height": 1001,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "色相/飽和度 6 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "色彩平衡 1 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 24",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2163,
+            244,
+            2438,
+            1044
+          ],
+          "width": 275,
+          "height": 800,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 25",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2161,
+            225,
+            2456,
+            1066
+          ],
+          "width": 295,
+          "height": 841,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "x8",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2204,
+            279,
+            2400,
+            377
+          ],
+          "width": 196,
+          "height": 98,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "x6",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2201,
+            441,
+            2402,
+            541
+          ],
+          "width": 201,
+          "height": 100,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "x5",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2209,
+            595,
+            2394,
+            695
+          ],
+          "width": 185,
+          "height": 100,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "x3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2221,
+            757,
+            2382,
+            840
+          ],
+          "width": 161,
+          "height": 83,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "x2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2211,
+            892,
+            2392,
+            991
+          ],
+          "width": 181,
+          "height": 99,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "群組 11",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            2201,
+            279,
+            2402,
+            840
+          ],
+          "width": 201,
+          "height": 561,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "x8 拷貝",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2204,
+                279,
+                2400,
+                377
+              ],
+              "width": 196,
+              "height": 98,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "x6 拷貝",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2201,
+                441,
+                2402,
+                541
+              ],
+              "width": 201,
+              "height": 100,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "x5 拷貝",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2209,
+                595,
+                2394,
+                695
+              ],
+              "width": 185,
+              "height": 100,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "x3 拷貝",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                2221,
+                757,
+                2382,
+                840
+              ],
+              "width": 161,
+              "height": 83,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "x2 拷貝",
+              "type": "Layer",
+              "visible": false,
+              "bbox": [
+                2211,
+                892,
+                2392,
+                991
+              ],
+              "width": 181,
+              "height": 99,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        },
+        {
+          "name": "圖層 22",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            2560,
+            1440
+          ],
+          "width": 2560,
+          "height": 1440,
+          "opacity": 156,
+          "blend_mode": "BlendMode.NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "FG剩餘次數",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        15,
+        1029,
+        358,
+        1221
+      ],
+      "width": 343,
+      "height": 192,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "children": [
+        {
+          "name": "群組 8",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            15,
+            1029,
+            358,
+            1221
+          ],
+          "width": 343,
+          "height": 192,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "圖層35",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                130,
+                1137,
+                217,
+                1217
+              ],
+              "width": 87,
+              "height": 80,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "矩形 7",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                15,
+                1036,
+                356,
+                1145
+              ],
+              "width": 341,
+              "height": 109,
+              "opacity": 192,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層33",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                52,
+                1035,
+                329,
+                1039
+              ],
+              "width": 277,
+              "height": 4,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層34",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                52,
+                1145,
+                329,
+                1149
+              ],
+              "width": 277,
+              "height": 4,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "矩形 8",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                311,
+                1029,
+                358,
+                1149
+              ],
+              "width": 47,
+              "height": 120,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層31",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                15,
+                1029,
+                62,
+                1149
+              ],
+              "width": 47,
+              "height": 120,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層32",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                156,
+                1148,
+                209,
+                1221
+              ],
+              "width": 53,
+              "height": 73,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層30",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                130,
+                1138,
+                238,
+                1149
+              ],
+              "width": 108,
+              "height": 11,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層36",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                342,
+                1036,
+                353,
+                1142
+              ],
+              "width": 11,
+              "height": 106,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層37",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                22,
+                1036,
+                33,
+                1142
+              ],
+              "width": 11,
+              "height": 106,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        },
+        {
+          "name": "99/99",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            63,
+            1061,
+            310,
+            1118
+          ],
+          "width": 247,
+          "height": 57,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "輪框",
+      "type": "Layer",
+      "visible": true,
+      "bbox": [
+        368,
+        106,
+        2192,
+        1218
+      ],
+      "width": 1824,
+      "height": 1112,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL"
+    },
+    {
+      "name": "FG打開(動效出)",
+      "type": "Group",
+      "visible": false,
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "width": 0,
+      "height": 0,
+      "opacity": 255,
+      "blend_mode": "BlendMode.LINEAR_DODGE",
+      "children": [
+        {
+          "name": "輪框 拷貝",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            360,
+            98,
+            2200,
+            1226
+          ],
+          "width": 1840,
+          "height": 1128,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "形狀 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            326,
+            77,
+            2229,
+            1239
+          ],
+          "width": 1903,
+          "height": 1162,
+          "opacity": 179,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "9bacc97ce1793acb83235078a3bf3b72225822f8a6aa2-Dvcgz1 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1981,
+            266,
+            2355,
+            1576
+          ],
+          "width": 374,
+          "height": 1310,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LIGHTER_COLOR"
+        },
+        {
+          "name": "9bacc97ce1793acb83235078a3bf3b72225822f8a6aa2-Dvcgz1 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            210,
+            -389,
+            584,
+            921
+          ],
+          "width": 374,
+          "height": 1310,
+          "opacity": 217,
+          "blend_mode": "BlendMode.LIGHTER_COLOR"
+        }
+      ]
+    },
+    {
+      "name": "連消分數",
+      "type": "Group",
+      "visible": false,
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "width": 0,
+      "height": 0,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "壓黑",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            409,
+            146,
+            2150,
+            1172
+          ],
+          "width": 1741,
+          "height": 1026,
+          "opacity": 128,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "FG",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "x2",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1140,
+                402,
+                1420,
+                528
+              ],
+              "width": 280,
+              "height": 126,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        },
+        {
+          "name": "MG",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "20.00",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1048,
+                560,
+                1513,
+                692
+              ],
+              "width": 465,
+              "height": 132,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "遊戲訊息",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        239,
+        11,
+        2492,
+        143
+      ],
+      "width": 2253,
+      "height": 132,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "children": [
+        {
+          "name": "矩形 3",
+          "type": "Layer",
+          "visible": false,
+          "bbox": [
+            621,
+            21,
+            1969,
+            135
+          ],
+          "width": 1348,
+          "height": 114,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "群組 7",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            239,
+            19,
+            2492,
+            136
+          ],
+          "width": 2253,
+          "height": 117,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "圖層 16",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                607,
+                49,
+                1957,
+                99
+              ],
+              "width": 1350,
+              "height": 50,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "形狀 1",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                620,
+                21,
+                1947,
+                135
+              ],
+              "width": 1327,
+              "height": 114,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "曲線 1",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "字",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                239,
+                55,
+                2492,
+                113
+              ],
+              "width": 2253,
+              "height": 58,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "THE FREE GAMES FEATURE BEGINS WITH A BONUS MULTIPLIER OF X1, X2",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    243,
+                    57,
+                    2488,
+                    107
+                  ],
+                  "width": 2245,
+                  "height": 50,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "THE FREE GAMES FEATURE BEGINS WITH A BONUS MULTIPLIER OF X1, X2 拷貝",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    239,
+                    55,
+                    2492,
+                    113
+                  ],
+                  "width": 2253,
+                  "height": 58,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "形狀 1 拷貝 3",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                619,
+                19,
+                1948,
+                136
+              ],
+              "width": 1329,
+              "height": 117,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "形狀 1 拷貝 2",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                612,
+                19,
+                1954,
+                136
+              ],
+              "width": 1342,
+              "height": 117,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        },
+        {
+          "name": "群組 6 拷貝",
+          "type": "Group",
+          "visible": false,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "矩形 4",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                583,
+                11,
+                704,
+                143
+              ],
+              "width": 121,
+              "height": 132,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層20",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                664,
+                124,
+                696,
+                134
+              ],
+              "width": 32,
+              "height": 10,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "群組 5",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "橢圓 1",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    576,
+                    53,
+                    621,
+                    98
+                  ],
+                  "width": 45,
+                  "height": 45,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "圖層19",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    600,
+                    51,
+                    620,
+                    70
+                  ],
+                  "width": 20,
+                  "height": 19,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.LINEAR_DODGE"
+                },
+                {
+                  "name": "橢圓 1 拷貝",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    583,
+                    60,
+                    614,
+                    91
+                  ],
+                  "width": 31,
+                  "height": 31,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "圖層26",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            576,
+            11,
+            704,
+            143
+          ],
+          "width": 128,
+          "height": 132,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "群組 6",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            1863,
+            11,
+            1991,
+            143
+          ],
+          "width": 128,
+          "height": 132,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "矩形 4",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1863,
+                11,
+                1984,
+                143
+              ],
+              "width": 121,
+              "height": 132,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "圖層20",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1871,
+                124,
+                1903,
+                134
+              ],
+              "width": 32,
+              "height": 10,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "群組 5",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                1946,
+                53,
+                1991,
+                98
+              ],
+              "width": 45,
+              "height": 45,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL",
+              "children": [
+                {
+                  "name": "橢圓 1",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1946,
+                    53,
+                    1991,
+                    98
+                  ],
+                  "width": 45,
+                  "height": 45,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "橢圓 1 拷貝",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1953,
+                    60,
+                    1984,
+                    91
+                  ],
+                  "width": 31,
+                  "height": 31,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "共用操作UI",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        -38,
+        1178,
+        2775,
+        1440
+      ],
+      "width": 2813,
+      "height": 262,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "底UI",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            -38,
+            1178,
+            2775,
+            1440
+          ],
+          "width": 2813,
+          "height": 262,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "群組 8",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                -10,
+                1206,
+                2570,
+                1440
+              ],
+              "width": 2580,
+              "height": 234,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 40",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    -10,
+                    1206,
+                    2570,
+                    1440
+                  ],
+                  "width": 2580,
+                  "height": 234,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "圖層 20",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1917,
+                1210,
+                2570,
+                1410
+              ],
+              "width": 653,
+              "height": 200,
+              "opacity": 61,
+              "blend_mode": "BlendMode.MULTIPLY"
+            },
+            {
+              "name": "圖層 20 拷貝",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1266,
+                1210,
+                1919,
+                1410
+              ],
+              "width": 653,
+              "height": 200,
+              "opacity": 61,
+              "blend_mode": "BlendMode.MULTIPLY"
+            },
+            {
+              "name": "圖層 20 拷貝 2",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                613,
+                1210,
+                1266,
+                1410
+              ],
+              "width": 653,
+              "height": 200,
+              "opacity": 61,
+              "blend_mode": "BlendMode.MULTIPLY"
+            },
+            {
+              "name": "圖層 20 拷貝 2",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                -38,
+                1210,
+                615,
+                1410
+              ],
+              "width": 653,
+              "height": 200,
+              "opacity": 61,
+              "blend_mode": "BlendMode.MULTIPLY"
+            },
+            {
+              "name": "矩形 5",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                -1,
+                1178,
+                2775,
+                1207
+              ],
+              "width": 2776,
+              "height": 29,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        },
+        {
+          "name": "圖層 17 拷貝 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1103,
+            1234,
+            1246,
+            1377
+          ],
+          "width": 143,
+          "height": 143,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 17 拷貝 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1607,
+            1234,
+            1750,
+            1377
+          ],
+          "width": 143,
+          "height": 143,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 17 拷貝 5",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1814,
+            1241,
+            1944,
+            1370
+          ],
+          "width": 130,
+          "height": 129,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層 17 拷貝 6",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2351,
+            1241,
+            2481,
+            1370
+          ],
+          "width": 130,
+          "height": 129,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "分數資訊",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            72,
+            1230,
+            1587,
+            1377
+          ],
+          "width": 1515,
+          "height": 147,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "balance",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                72,
+                1230,
+                531,
+                1377
+              ],
+              "width": 459,
+              "height": 147,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 31",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    72,
+                    1230,
+                    531,
+                    1377
+                  ],
+                  "width": 459,
+                  "height": 147,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "BALANCE",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    195,
+                    1254,
+                    407,
+                    1291
+                  ],
+                  "width": 212,
+                  "height": 37,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "1,000,000,000.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    102,
+                    1312,
+                    498,
+                    1357
+                  ],
+                  "width": 396,
+                  "height": 45,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "bet",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                1264,
+                1230,
+                1587,
+                1377
+              ],
+              "width": 323,
+              "height": 147,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 33",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1264,
+                    1230,
+                    1587,
+                    1377
+                  ],
+                  "width": 323,
+                  "height": 147,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "BET",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1385,
+                    1255,
+                    1469,
+                    1290
+                  ],
+                  "width": 84,
+                  "height": 35,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "10,000.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1318,
+                    1312,
+                    1541,
+                    1357
+                  ],
+                  "width": 223,
+                  "height": 45,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "win",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                589,
+                1230,
+                1047,
+                1377
+              ],
+              "width": 458,
+              "height": 147,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 32",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    589,
+                    1230,
+                    1047,
+                    1377
+                  ],
+                  "width": 458,
+                  "height": 147,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "WIN",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    770,
+                    1255,
+                    860,
+                    1290
+                  ],
+                  "width": 90,
+                  "height": 35,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "243,666,888.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    643,
+                    1312,
+                    991,
+                    1357
+                  ],
+                  "width": 348,
+                  "height": 45,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spin / Stop 按鈕",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        1913,
+        984,
+        2340,
+        1440
+      ],
+      "width": 427,
+      "height": 456,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "children": [
+        {
+          "name": "鋼筆1",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2167,
+            1166,
+            2329,
+            1384
+          ],
+          "width": 162,
+          "height": 218,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "曲線 3 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層25",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2125,
+            1353,
+            2175,
+            1403
+          ],
+          "width": 50,
+          "height": 50,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層26",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2135,
+            1365,
+            2165,
+            1395
+          ],
+          "width": 30,
+          "height": 30,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層24",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2002,
+            1086,
+            2292,
+            1376
+          ],
+          "width": 290,
+          "height": 290,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層24 拷貝 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1998,
+            1082,
+            2296,
+            1380
+          ],
+          "width": 298,
+          "height": 298,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "色相/飽和度 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層24 拷貝",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1913,
+            984,
+            2325,
+            1440
+          ],
+          "width": 412,
+          "height": 456,
+          "opacity": 255,
+          "blend_mode": "BlendMode.LINEAR_DODGE"
+        },
+        {
+          "name": "橢圓 2",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2002,
+            1086,
+            2292,
+            1376
+          ],
+          "width": 290,
+          "height": 290,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "曲線 3",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "圖層27",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2299,
+            1146,
+            2340,
+            1202
+          ],
+          "width": 41,
+          "height": 56,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "btn_spin_spinner",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2042,
+            1129,
+            2253,
+            1333
+          ],
+          "width": 211,
+          "height": 204,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "色相/飽和度 4",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "共用操作UI",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        1120,
+        1246,
+        2466,
+        1363
+      ],
+      "width": 1346,
+      "height": 117,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "btn_turboOff",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1828,
+            1254,
+            1928,
+            1354
+          ],
+          "width": 100,
+          "height": 100,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "btn_auto",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2366,
+            1254,
+            2466,
+            1354
+          ],
+          "width": 100,
+          "height": 100,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "btn_add",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1624,
+            1250,
+            1732,
+            1358
+          ],
+          "width": 108,
+          "height": 108,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "btn_reduce",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            1120,
+            1250,
+            1228,
+            1358
+          ],
+          "width": 108,
+          "height": 108,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "加速開啟_美術出圖",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            1819,
+            1246,
+            1936,
+            1363
+          ],
+          "width": 117,
+          "height": 117,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "btn_turboOn",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                1819,
+                1246,
+                1936,
+                1363
+              ],
+              "width": 117,
+              "height": 117,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        0,
+        20,
+        150,
+        170
+      ],
+      "width": 150,
+      "height": 150,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "menu_關閉",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            0,
+            20,
+            150,
+            170
+          ],
+          "width": 150,
+          "height": 150,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "fm_menu_off",
+              "type": "Layer",
+              "visible": true,
+              "bbox": [
+                0,
+                20,
+                150,
+                170
+              ],
+              "width": 150,
+              "height": 150,
+              "opacity": 255,
+              "blend_mode": "BlendMode.NORMAL"
+            },
+            {
+              "name": "btn_menu_on水平翻轉",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                24,
+                66,
+                120,
+                126
+              ],
+              "width": 96,
+              "height": 60,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "btn_menu_on",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    24,
+                    66,
+                    120,
+                    126
+                  ],
+                  "width": 96,
+                  "height": 60,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "menu_打開",
+          "type": "Group",
+          "visible": false,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "fm_menu_示意圖",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 179,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "fm_menu_示意圖",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    0,
+                    20,
+                    150,
+                    1036
+                  ],
+                  "width": 150,
+                  "height": 1016,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "fm_menu_製作檔",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "fm_menu",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    0,
+                    20,
+                    150,
+                    192
+                  ],
+                  "width": 150,
+                  "height": 172,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "icon",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "btn_leave",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    16,
+                    868,
+                    136,
+                    988
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_history",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    16,
+                    696,
+                    136,
+                    816
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_info",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    16,
+                    524,
+                    136,
+                    644
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_music_on",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    16,
+                    352,
+                    136,
+                    472
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_music_off",
+                  "type": "Layer",
+                  "visible": false,
+                  "bbox": [
+                    16,
+                    352,
+                    136,
+                    472
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_voice_on",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    16,
+                    180,
+                    136,
+                    300
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_voice_off",
+                  "type": "Layer",
+                  "visible": false,
+                  "bbox": [
+                    16,
+                    180,
+                    136,
+                    300
+                  ],
+                  "width": 120,
+                  "height": 120,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "btn_menu_on",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    24,
+                    66,
+                    120,
+                    126
+                  ],
+                  "width": 96,
+                  "height": 60,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "系統訊息",
+      "type": "Group",
+      "visible": true,
+      "bbox": [
+        0,
+        1390,
+        2560,
+        1440
+      ],
+      "width": 2560,
+      "height": 50,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "圖層 1",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            0,
+            1390,
+            2560,
+            1440
+          ],
+          "width": 2560,
+          "height": 50,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "471943-ee891326-4b97-444a-9bd7-bcfbafe1e6d8",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            22,
+            1398,
+            898,
+            1427
+          ],
+          "width": 876,
+          "height": 29,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        },
+        {
+          "name": "V 1.2.0",
+          "type": "Layer",
+          "visible": true,
+          "bbox": [
+            2427,
+            1399,
+            2538,
+            1427
+          ],
+          "width": 111,
+          "height": 28,
+          "opacity": 255,
+          "blend_mode": "BlendMode.NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "btn_BuyBouns",
+      "type": "Layer",
+      "visible": false,
+      "bbox": [
+        2326,
+        964,
+        2509,
+        1152
+      ],
+      "width": 183,
+      "height": 188,
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL"
+    },
+    {
+      "name": "JP",
+      "type": "Group",
+      "visible": false,
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "width": 0,
+      "height": 0,
+      "opacity": 255,
+      "blend_mode": "BlendMode.PASS_THROUGH",
+      "children": [
+        {
+          "name": "Frame 1",
+          "type": "Group",
+          "visible": true,
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "width": 0,
+          "height": 0,
+          "opacity": 255,
+          "blend_mode": "BlendMode.PASS_THROUGH",
+          "children": [
+            {
+              "name": "Group 9",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 41",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    136,
+                    -2,
+                    704,
+                    81
+                  ],
+                  "width": 568,
+                  "height": 83,
+                  "opacity": 179,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "GRAND",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    153,
+                    24,
+                    322,
+                    61
+                  ],
+                  "width": 169,
+                  "height": 37,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "999,999,999.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    348,
+                    25,
+                    688,
+                    66
+                  ],
+                  "width": 340,
+                  "height": 41,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Group 10",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 41",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    709,
+                    -2,
+                    1275,
+                    81
+                  ],
+                  "width": 566,
+                  "height": 83,
+                  "opacity": 179,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "MAJOR",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    725,
+                    24,
+                    895,
+                    61
+                  ],
+                  "width": 170,
+                  "height": 37,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "9,999,999.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    976,
+                    25,
+                    1260,
+                    66
+                  ],
+                  "width": 284,
+                  "height": 41,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Group 11",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 41",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1280,
+                    -2,
+                    1847,
+                    81
+                  ],
+                  "width": 567,
+                  "height": 83,
+                  "opacity": 179,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "MINOR",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1297,
+                    24,
+                    1454,
+                    61
+                  ],
+                  "width": 157,
+                  "height": 37,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "99,999.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1618,
+                    25,
+                    1834,
+                    66
+                  ],
+                  "width": 216,
+                  "height": 41,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            },
+            {
+              "name": "Group 12",
+              "type": "Group",
+              "visible": true,
+              "bbox": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "height": 0,
+              "opacity": 255,
+              "blend_mode": "BlendMode.PASS_THROUGH",
+              "children": [
+                {
+                  "name": "Rectangle 41",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1852,
+                    -2,
+                    2419,
+                    81
+                  ],
+                  "width": 567,
+                  "height": 83,
+                  "opacity": 179,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "MINI",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    1869,
+                    25,
+                    1969,
+                    60
+                  ],
+                  "width": 100,
+                  "height": 35,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                },
+                {
+                  "name": "9,999.00",
+                  "type": "Layer",
+                  "visible": true,
+                  "bbox": [
+                    2218,
+                    25,
+                    2406,
+                    66
+                  ],
+                  "width": 188,
+                  "height": 41,
+                  "opacity": 255,
+                  "blend_mode": "BlendMode.NORMAL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

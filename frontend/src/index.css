@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f172a;
+  /* slate-900 */
+  --foreground: #f8fafc;
+  /* slate-50 */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* 強制將 Agentation 的懸浮按鈕放大並且改顏色以利辨識 */
+#agentation-root button {
+  transform: scale(1.5) !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.8) !important;
+  border: 2px solid cyan !important;
+}

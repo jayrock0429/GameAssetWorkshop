@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  /* 暗色系 RenderWolf 主色系 */
+  --bg-deep: #0f0f11;
+  --bg-card: #161618;
+  --bg-sidebar: #111113;
+  --bg-panel: #1a1a1d;
+  --bg-hover: #222226;
+  --border: #2a2a2f;
+  --border-light: #333338;
+  --text-primary: #f0f0f2;
+  --text-secondary: #888892;
+  --text-muted: #555560;
+  --accent-purple: #7c3aed;
+  --accent-purple-light: #a855f7;
+  --accent-gold: #f59e0b;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-blue: #3b82f6;
+
+  /* Tier 顏色 */
+  --tier-high: #f59e0b;
+  --tier-medium: #3b82f6;
+  --tier-low: #6b7280;
+  --tier-character: #a855f7;
+  --tier-special: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* 滾動條美化 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-card); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+/* 通用工具 */
+.glass {
+  background: rgba(22, 22, 24, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: var(--accent-purple);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary:hover { background: var(--accent-purple-light); transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-ghost:hover { background: var(--bg-hover); color: var(--text-primary); border-color: var(--border-light); }
+
+.input-field {
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input-field:focus { border-color: var(--accent-purple); }
+.input-field::placeholder { color: var(--text-muted); }
+
+textarea.input-field { resize: vertical; min-height: 80px; }
+
+label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* 標籤 */
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.badge-character { background: rgba(168,85,247,0.15); color: var(--tier-character); }
+.badge-high { background: rgba(245,158,11,0.15); color: var(--tier-high); }
+.badge-medium { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+.badge-low { background: rgba(107,114,128,0.15); color: var(--tier-low); }
+.badge-special { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+.badge-frame, .badge-bg, .badge-button, .badge-title, .badge-royal {
+  background: rgba(107,114,128,0.15); color: var(--tier-low);
+}
+
+/* 狀態動畫 */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .5; } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+.animate-fadeIn { animation: fadeIn 0.3s ease; }
+
+/* 過渡效果 */
+.transition-all { transition: all 0.2s ease; }
+
+/* 資產卡片 hover 顯示刪除按鈕 */
+.asset-card:hover .asset-delete-btn { opacity: 1 !important; }
+.asset-card:hover .generate-overlay { opacity: 1 !important; }

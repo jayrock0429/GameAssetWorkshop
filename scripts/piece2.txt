@@ -1,0 +1,284 @@
+    def get_grid_layout(self, canvas_w, canvas_h, layout_mode="Cabinet"):
+        """[V22.0]  get_grid_layout (Matched to KnockoutClash PSD) """
+        # [Phase 2]
+        manifest = self.manifest if hasattr(self, 'manifest') else {}
+        cfg = manifest.get("layout_config", {})
+        
+        # [V26.2 Fix] Prioritize Excel Config
+        if cfg and cfg.get("canvas_w"):
+            canvas_w, canvas_h = cfg["canvas_w"], cfg["canvas_h"]
+
+        # Default settings
+        layout = {
+            "start_x": 0, "start_y": 0, "total_w": 0, "total_h": 0,
+            "cell_w": 0, "cell_h": 0, "cols": 5, "rows": 3,
+            "spacing": 10
+        }
+
+        # [V20.1] Production_V1 Match
+        if layout_mode == "Production_V1":
+            layout.update({
+                "start_x": 420, "start_y": 157, 
+                "total_w": 1719, "total_h": 1003,
+                "cell_w": 343, "cell_h": 203,
+                "cols": 5, "rows": 5, "spacing": 0
+            })
+        elif layout_mode == "H5_Mobile":
+            # 720x1280 (Standard JILI H5)
+            layout.update({
+                "start_x": 40, "start_y": 300,
+                "total_w": 640, "total_h": 600,
+                "cell_w": 128, "cell_h": 200,
+                "cols": 5, "rows": 3, "spacing": 5
+            })
+        else: # Cabinet 1280x720
+            layout.update({
+                "start_x": 220, "start_y": 110,
+                "total_w": 840, "total_h": 500,
+                "cell_w": 160, "cell_h": 160,
+                "cols": 5, "rows": 3, "spacing": 10
+            })
+
+        # Save for smart_hollow
+        self.layout_info["grid"] = layout
+        return layout
+
+    def _get_style_hint(self, image_path):
+        """[V11.2]  AI Style Hint """
+        gemini_key = os.environ.get("GEMINI_API_KEY")
+        if not gemini_key or not os.path.exists(image_path):
+            return "Professional Slot Art"
+            
+        try:
+             from google import genai
+             from google.genai import types
+             client = genai.Client(api_key=gemini_key)
+             
+             # Load image for processing
+             with open(image_path, 'rb') as f:
+                 img_data = f.read()
+                 
+             prompt = "Describe the visual style of this image in 5 keywords for an AI artist (e.g., 'gold neon, 3D render, cyberpunk')."
+             
+             response = client.models.generate_content(
+                 model='gemini-2.5-flash-image',
+                 contents=[
+                     prompt,
+                     types.Part.from_bytes(data=img_data, mime_type="image/png")
+                 ]
+             )
+             return response.text.strip()
+        except Exception as e:
+            print(f"WARNING: Style Hint Generation failed: {e}")
+            return "Professional Slot Art"
+
+    def import_requirements(self, excel_path):
+        """[Phase 1] """
+        print(f"\n[ENGINE]  Requirements : {excel_path}...")
+        
+        try:
+            import pandas as pd
+            
+            # [Phase 2]  AI  (High-IQ)
+            ai_map = self.analyze_excel_structure_with_ai(excel_path)
+            if ai_map:
+                print(f" [V16.0 AI] : {ai_map}")
+            
+            xl = pd.ExcelFile(excel_path)
+            
+            # 1. Game Info (Resolution, etc.)
+            game_info = {}
+            if "Game_Info" in xl.sheet_names:
+                df_info = xl.parse("Game_Info")
+                game_info = dict(zip(df_info.iloc[:,0], df_info.iloc[:,1]))
+            
+            # 2. Symbol Design (DNA Extraction)
+            symbol_sheet = ai_map.get("symbol_design_sheet", "p") if ai_map else "p"
+            name_col = ai_map.get("name_col", 1) if ai_map else 1
+            desc_col = ai_map.get("desc_col", 5) if ai_map else 5
+            
+            symbols = []
+            symbol_descriptions = {}
+            
+            if symbol_sheet in xl.sheet_names:
+                df = xl.parse(symbol_sheet)
+                for index, row in df.iterrows():
+                    # Check if it looks like a Symbol ID (Starts with SYM, M, H, L, or is WILD/SCATTER)
+                    name = str(row.iloc[name_col]) if len(row) > name_col else ""
+                    desc = str(row.iloc[desc_col]) if len(row) > desc_col else ""
+                    
+                    if any(k in name.upper() for k in ["SYM_", "WILD", "SCATTER", "BONUS", "M1", "H1"]):
+                        symbols.append(name)
+                        symbol_descriptions[name] = desc
+            
+            # [V14.0 Fallback] 
+            if not symbols:
+                 symbols = ["M1", "M2", "M3", "Wild", "Scatter"]
+                 print("[WARN] UI Symbol List , default...")
+
+            # 3. Layout Config
+            layout_cfg = {
+                "canvas_w": game_info.get("Resolution_W", 1280),
+                "canvas_h": game_info.get("Resolution_H", 720),
+                "symbol_w": 160,
+                "symbol_h": 160
+            }
+
+            return {
+                "theme_hint": game_info.get("Theme", "Professional Slot"),
+                "symbols": symbols,
+                "symbol_descriptions": symbol_descriptions,
+                "game_info": game_info,
+                "layout_config": layout_cfg
+            }
+            
+        except Exception as e:
+            print(f"CRITICAL: Failed to import requirements: {e}")
+            return {"theme_hint": "Slot Machine", "symbols": ["M1", "Wild"], "symbol_descriptions": {}}
+
+    def analyze_psd(self, psd_path):
+        """[Phase 2] PSD Content Extraction & Layout Projection"""
+        print(f"\n[ARTIST] Analyzing Source PSD: {psd_path}...")
+        
+        if not os.path.exists(psd_path):
+            print(f"FAIL: PSD not found at {psd_path}")
+            return
+            
+        try:
+            psd = PSDImage.open(psd_path)
+            print(f" [V6.0] PSD Dimensions: {psd.width}x{psd.height}")
+            
+            # [V26.2]  PSD  Layout Projection 
+            # 1.   
+            # 2.   
+            # 3.   
+            
+            visual_dna = {
+                "palette": [],
+                "materials": [],
+                "lighting": "Studio",
+                "style_keywords": []
+            }
+            
+            # [Phase 2] Analyze layers for DNA
+            for layer in psd:
+                # Mock analysis logic: Extract keywords from layer names
+                if "gold" in layer.name.lower(): visual_dna["materials"].append("Brushed Gold")
+                if "gem" in layer.name.lower(): visual_dna["materials"].append("Crystal Gemstone")
+                if "neon" in layer.name.lower(): visual_dna["style_keywords"].append("Cyberpunk Neon")
+            
+            self.layout_info["visual_reference"] = visual_dna
+            
+            # [PSD Constraint] Extract constraints from PSD
+            if _HAS_CONSTRAINT_EXTRACTOR:
+                extractor = PSDConstraintExtractor(psd_path)
+                self.layout_constraints = extractor.extract()
+                print(f" [V20.4] PSD Constraints Extracted: {self.layout_constraints.canvas_w}x{self.layout_constraints.canvas_h}")
+                
+            return visual_dna
+            
+        except Exception as e:
+            print(f"WARNING: PSD Analysis failed: {e}")
+            return None
+
+    def auto_process_image(self, image_path):
+        """[Phase 2] Automatic Asset Processing (Alpha Remove / Resize)"""
+        print(f"\n[ENGINE] Auto-Processing Image: {image_path}...")
+        
+        try:
+            # 1. Remove background automatically if it's a symbol
+            if "SYMBOL" in image_path.upper() or "ICON" in image_path.upper():
+                transparent_path = self.process_transparency(image_path)
+                print(f" [V6.1] Background Removed: {transparent_path}")
+                return transparent_path
+            return image_path
+        except Exception as e:
+            print(f"WARNING: Auto-processing failed: {e}")
+            return image_path
+
+    def should_remove_background(self, asset_type, path):
+         """Determines if the AI generation resulted in a clean enough image for auto-transparency"""
+         # [V5] Rule: Mascot and Symbols always need it. BG and UI (H5) usually don't or are handled differently.
+         # [V19.0 Override] If it's a UI Frame, we actually DO want it transparent for the center hole!
+         return asset_type in ["Mascot", "Symbol", "UI"]
+
+    def generate_component_prompts(self, theme, component_type, subtype=None, style_hint="", style_profile="3D_Premium", layout_mode="Cabinet"):
+        """[V24.0] Enhanced reasoned prompt generation with structural injection"""
+        
+        # [Phase 4] Standard Quality Multiplier
+        quality_spells = _AAA_GLOBAL_RENDER
+        
+        # [V11.0] Legacy logic for direct prompt generation (Fallbacks)
+        request_info = {
+            "theme": theme,
+            "component": component_type,
+            "subtype": subtype,
+            "style_hint": style_hint,
+            "style_profile": style_profile,
+            "layout_mode": layout_mode
+        }
+
+        # [V26.0] Handle specific UI Frame feedback for H5_Mobile
+        feedback_str = ""
+        if "UI" in component_type:
+            feedback_str = " [CRITICAL CONSTRAINT]: ABSOLUTE ZERO PERSPECTIVE. MUST BE 100% FLAT 2D OVERLAY. NO ANGLES. NO VANISHING POINTS. FRONT-ON ORTHOGRAPHIC VIEW ONLY."
+        
+        if layout_mode == "H5_Mobile" and "UI" in component_type:
+             feedback_str += " [MANDATORY H5 CONSTRAINT]: You MUST NOT generate thick metal casino cabinets! Design MUST be ULTRA-THIN, sleek, frameless, and purely frosted glassmorphism floating UI to maximize mobile screen space."
+        
+        # [Phase 5] Inject DNA if available
+        if subtype and hasattr(self, 'symbol_descriptions'):
+             spec = self.symbol_descriptions.get(subtype)
+             if spec:
+                 request_info["dna_specification"] = spec
+                 print(f"DEBUG: [Phase 5] Injecting DNA Spec for {subtype}")
+
+        # [V13.0] AI Reasoning Pass (High-IQ Art Director)
+        reasoned_prompt = self._reason_prompt(request_info)
+        
+        if reasoned_prompt:
+            # Inject Structural Prefix
+            structural_prefix = _STRUCTURAL_CONSTRAINTS.get(component_type, "")
+            if structural_prefix:
+                reasoned_prompt = structural_prefix + reasoned_prompt
+                print(f"DEBUG: [V3.0 Structure] Injected Universal Structural Prefix for {component_type}")
+            
+            # [V24.0]  3A  (3A Spells Injection)
+            spell = ""
+            negative_spell = ""
+            if "UI" in component_type or component_type == "Button":
+                # UI Components use the new Zero-Perspective render standard
+                spell = _AAA_UI_RENDER + _AAA_UI_SPEC
+                negative_spell = _UI_NEGATIVE_PROMPT
+            elif component_type in ["Symbol", "Wild", "Scatter"]:
+                spell = _AAA_SYMBOL_SPEC + _AAA_GLOBAL_RENDER
+            elif component_type == "Mascot" or "character" in component_type.lower():
+                spell = _AAA_MASCOT_SPEC + _AAA_GLOBAL_RENDER
+            elif component_type == "Background" or "bg" in component_type.lower():
+                spell = ", atmospheric depth of field, wealth particles background, blurry, low contrast" + _AAA_GLOBAL_RENDER
+                
+            if spell:
+                # Append negative spell if exists
+                if negative_spell:
+                    if "Negative prompt:" in reasoned_prompt:
+                        reasoned_prompt = reasoned_prompt.replace("Negative prompt:", f"Negative prompt:{negative_spell},")
+                    elif "Negative Prompt:" in reasoned_prompt:
+                        reasoned_prompt = reasoned_prompt.replace("Negative Prompt:", f"Negative Prompt:{negative_spell},")
+                    else:
+                        reasoned_prompt += f"\n\nNegative prompt:{negative_spell}"
+
+                # Append main spell
+                if "Negative prompt:" in reasoned_prompt:
+                    parts = reasoned_prompt.split("Negative prompt:")
+                    reasoned_prompt = f"{parts[0].rstrip()}, {spell}\n\nNegative prompt:{parts[1]}"
+                elif "Negative Prompt:" in reasoned_prompt:
+                    parts = reasoned_prompt.split("Negative Prompt:")
+                    reasoned_prompt = f"{parts[0].rstrip()}, {spell}\n\nNegative Prompt:{parts[1]}"
+                else:
+                    reasoned_prompt += f", {spell}"
+                    
+            return reasoned_prompt
+
+        # ---  (Legacy V11.0 Templates) ---
+        style_prompt = self.styles_config.get(style_profile, self.styles_config["3D_Premium"])
+        # (Fallbacks continued...)

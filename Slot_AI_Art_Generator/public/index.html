@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slot AI 美術生成中心 | Excel 版</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .upload-zone {
+      border: 2px dashed rgba(52, 211, 153, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .upload-zone:hover,
+    .upload-zone.dragover {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .loading-spinner {
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top: 3px solid #10b981;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#0f172a] text-slate-100 min-h-screen flex flex-col items-center py-12 px-4">
+  <div class="w-full max-w-5xl">
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-black mb-4 tracking-tight capitalize">
+        Slot AI
+        <span class="text-emerald-400 font-medium">Art Generator</span>
+      </h1>
+      <p class="text-slate-400 text-lg">
+        讀取 Excel 企劃分頁，自動生成全套遊戲資產
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- 左側：控制區 -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        <section class="glass-panel p-8 rounded-3xl shadow-2xl">
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-3 text-emerald-300">
+            <i class="fas fa-file-excel"></i> 企劃書上傳
+          </h2>
+
+          <div id="dropZone"
+            class="upload-zone rounded-2xl p-8 flex flex-col items-center justify-center cursor-pointer mb-6 text-center">
+            <i class="fas fa-cloud-upload-alt text-4xl text-slate-500 mb-4"></i>
+            <p class="text-slate-300 font-medium" id="fileNameDisp">
+              將 Excel 檔案拖曳至此
+            </p>
+            <p class="text-slate-500 text-xs mt-2">支援 .xlsx, .xls</p>
+            <input type="file" id="excelFile" class="hidden" accept=".xlsx, .xls" />
+          </div>
+
+          <!-- 版型選擇器 -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-slate-400 mb-2">請選擇生成目標版型 (對齊 PSD 尺寸)</label>
+            <div class="grid grid-cols-2 gap-4">
+              <label class="cursor-pointer">
+                <input type="radio" name="targetLayout" value="Landscape" class="hidden peer" checked />
+                <div
+                  class="px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 text-center transition-all">
+                  <i class="fas fa-desktop mb-2 text-emerald-400 block text-xl"></i>
+                  <span class="text-sm font-bold text-slate-300 peer-checked:text-emerald-300">橫版 (16:9)</span><br />
+                  <span class="text-xs text-slate-500">對應 5x3_L.psd</span>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="targetLayout" value="Portrait" class="hidden peer" />
+                <div
+                  class="px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 text-center transition-all">
+                  <i class="fas fa-mobile-alt mb-2 text-emerald-400 block text-xl"></i>
+                  <span class="text-sm font-bold text-slate-300 peer-checked:text-emerald-300">直版 (9:16)</span><br />
+                  <span class="text-xs text-slate-500">對應 5x3_P.psd</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- 新增：自訂盤面規格輸入 -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-slate-400 mb-2">請設定盤面規格 (欄數 x 列數)</label>
+            <div class="flex items-center gap-3">
+              <!-- 欄 (Cols) -->
+              <div class="relative w-full">
+                <input type="number" id="gridCols" min="1" max="20" value="5"
+                  class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-4 text-emerald-300 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-bold text-center text-lg shadow-inner" />
+                <span
+                  class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm flex items-center gap-2 pointer-events-none"><i
+                    class="fas fa-arrows-alt-h"></i> 欄</span>
+              </div>
+              <span class="text-slate-400 font-bold select-none text-lg">✕</span>
+              <!-- 列 (Rows) -->
+              <div class="relative w-full">
+                <input type="number" id="gridRows" min="1" max="20" value="3"
+                  class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-4 text-emerald-300 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-bold text-center text-lg shadow-inner" />
+                <span
+                  class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm flex items-center gap-2 pointer-events-none"><i
+                    class="fas fa-arrows-alt-v"></i> 列</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">系統將依據您輸入的盤面自動推算出最佳圖符裁切比例。</p>
+          </div>
+
+          <!-- 模型與風格選擇區塊 -->
+          <div class="mb-8">
+            <label class="block text-sm font-medium text-slate-400 mb-2">請選擇美術風格 (Style Preset)</label>
+
+            <!-- 下拉選單 -->
+            <div class="relative mb-4">
+              <i class="fas fa-palette absolute left-4 top-1/2 -translate-y-1/2 text-emerald-500 z-10"></i>
+              <select id="styleSelector"
+                class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 pl-11 pr-10 text-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-bold appearance-none cursor-pointer">
+                <option
+                  value='AAA quality casino slot game asset, highly polished 3D render, extreme detail, vibrant glossy colors, rich lighting'>
+                  ✨ 現代 3D 渲染 (Modern 3D Glossy)</option>
+                <option
+                  value='AAA quality casino slot game asset, League of Legends style, painterly semi-realistic, vibrant magical energy, dynamic epic lighting, cinematic splash art quality, bold brushwork, high fantasy mecha-magic, masterpiece'>
+                  🛡️ 英雄聯盟 (League of Legends)</option>
+                <option
+                  value='AAA quality casino slot game asset, Cyberpunk aesthetic, neon glows, futuristic, dark sci-fi, highly detailed 3D'>
+                  🌃 賽博龐克 (Cyberpunk Neon)</option>
+                <option
+                  value='AAA quality casino slot game asset, Retro casino slot style, vintage golden age, flat shaded but shiny, high-end nostalgia'>
+                  🎰 經典復古 (Classic Retro)</option>
+                <option
+                  value='AAA quality casino slot game asset, beautiful watercolor illustration, fantasy style, soft blending, artistic masterpiece'>
+                  🎨 水彩手繪 (Watercolor Fantasy)</option>
+                <option
+                  value='AAA quality casino slot game asset, high quality anime style, cel-shaded, vibrant flat colors, extremely detailed'>
+                  🌸 日系動漫 (Anime Cel-Shaded)</option>
+                <option
+                  value='AAA quality casino slot game asset, Oriental fantasy style, elegant asian motifs, golden accents, jade and gold, highly polished 3D'>
+                  🐉 東方奇幻 (Oriental Fantasy)</option>
+                <option value='AI_DIRECTOR'>🤖 交給 AI 決定 (Auto-Detect)</option>
+                <option value='CUSTOM'>✍️ 手動輸入關鍵字 (Custom)</option>
+              </select>
+              <i
+                class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"></i>
+            </div>
+
+            <!-- 自訂風格輸入 (預設隱藏) -->
+            <div id="customStyleContainer" class="relative hidden mt-3">
+              <i class="fas fa-magic absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+              <input type="text" id="customStyle" placeholder="請在此輸入您的自訂英文 Prompt 關鍵字..."
+                class="w-full bg-slate-900/50 border border-slate-600 rounded-xl py-3 pl-11 pr-4 text-emerald-300 placeholder-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-mono text-sm" />
+            </div>
+            <p class="text-xs text-slate-500 mt-2">選擇適合該主題的美術風格，或選「手動輸入」自行刻畫細細節。</p>
+          </div>
+
+          <button id="btnParse"
+            class="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.98] py-4 rounded-xl font-bold text-white shadow-lg transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed">
+            <span>Step 1: 解析企劃書</span>
+            <div id="parseLoader" class="loading-spinner hidden"></div>
+          </button>
+        </section>
+
+        <!-- 新增：資產選擇區 -->
+        <section id="selectionSection"
+          class="hidden glass-panel p-8 rounded-3xl shadow-2xl border-t-4 border-t-emerald-500">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold flex items-center gap-3 text-emerald-300">
+              <i class="fas fa-tasks"></i> 選擇要生成的資產
+            </h2>
+            <div class="flex gap-2">
+              <button id="btnSelectAll"
+                class="text-xs bg-slate-700 hover:bg-slate-600 px-2 py-1 rounded text-slate-300">全選</button>
+              <button id="btnInvertSelect"
+                class="text-xs bg-slate-700 hover:bg-slate-600 px-2 py-1 rounded text-slate-300">反選</button>
+            </div>
+          </div>
+
+          <div id="assetList" class="max-h-[300px] overflow-y-auto mb-8 pr-2 custom-scrollbar">
+            <!-- JS 動態注入勾選清單 -->
+          </div>
+
+          <button id="btnGenerate"
+            class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-[0.98] py-4 rounded-xl font-bold text-white shadow-lg transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed">
+            <span>Step 2: 開始生成選取項</span>
+            <div id="generateLoader" class="loading-spinner hidden"></div>
+          </button>
+
+          <button id="btnAbort"
+            class="w-full mt-3 bg-red-600 hover:bg-red-700 active:scale-[0.98] py-4 rounded-xl font-bold text-white shadow-lg transition-all flex items-center justify-center gap-3 hidden">
+            <i class="fas fa-stop-circle text-xl"></i>
+            <span>緊急停止生成 (Abort)</span>
+          </button>
+        </section>
+
+        <!-- 進度提示 -->
+        <section id="statusBox" class="hidden glass-panel p-6 rounded-2xl border-l-4 border-l-blue-500">
+          <div class="flex items-start gap-4">
+            <i class="fas fa-robot text-blue-400 text-xl mt-1"></i>
+            <div>
+              <h3 id="statusTitle" class="font-bold text-blue-100">
+                AI 總監正在處理中...
+              </h3>
+              <p id="statusDetail" class="text-sm text-slate-400 mt-1">
+                正在執行管線任務，請耐心稍候。
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- 右側：成果區 -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        <section id="gallerySection" class="glass-panel min-h-[400px] p-8 rounded-3xl relative overflow-hidden">
+          <!-- 背景裝飾 -->
+          <div class="absolute top-0 right-0 p-4 opacity-10">
+            <i class="fas fa-images text-9xl"></i>
+          </div>
+
+          <div id="galleryPlaceholder"
+            class="h-[340px] flex flex-col items-center justify-center text-slate-600 transition-opacity">
+            <i class="fas fa-paint-brush text-5xl mb-4"></i>
+            <p>生成的 Slot 美術資產將會顯示在這邊</p>
+          </div>
+
+          <div id="galleryContent" class="hidden relative z-10">
+            <div class="flex justify-between items-end mb-8">
+              <div>
+                <h2 class="text-2xl font-black text-emerald-300">
+                  美術清單成果
+                </h2>
+                <p id="themeDisp" class="text-slate-400 text-sm mt-1"></p>
+              </div>
+              <span
+                class="bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Completed</span>
+            </div>
+            <div id="imageGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              <!-- JS Inject -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

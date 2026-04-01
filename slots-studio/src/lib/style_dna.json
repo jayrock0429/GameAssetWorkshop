@@ -1,0 +1,34 @@
+{
+  "golden_royal": {
+    "name": "Golden Royal",
+    "description": "金屬質感、珍珠光澤、高對比巴洛克宮廷風",
+    "promptInjection": "hammered gold textures, imperial pearl sheen, high-contrast baroque ornaments, warm amber rim lighting, velvet-deep shadows, specular gold highlights, crimson and ivory palette, jeweled embellishments",
+    "lighting": "dramatic three-point lighting, warm golden rim light, strong specular reflections on metal",
+    "palette": "deep crimson #8B0000, imperial gold #CFB53B, ivory pearl #F5F0E8, midnight navy #1B2A4A",
+    "materials": "polished hammered gold, brushed brass, aged parchment, faceted precious gems, royal velvet"
+  },
+  "modern_neon": {
+    "name": "Modern Neon",
+    "description": "霓虹特效、高飽和藍/洋紅、賽博龐克感",
+    "promptInjection": "electric neon glow, hyper-saturated cyan and magenta, cyberpunk chrome surfaces, bloom light leaks, laser scanline effects, holographic iridescence, dark carbon fiber background, neon tube reflections",
+    "lighting": "neon backlight, bloom glow halos, rim-lit with electric blue and hot pink, volumetric laser beams",
+    "palette": "electric cyan #00FFFF, hot magenta #FF00FF, deep void black #050510, chrome silver #C0C0D0",
+    "materials": "brushed chrome, carbon fiber weave, liquid crystal, electro-luminescent panels, mirrored acrylic"
+  },
+  "ancient_myth": {
+    "name": "Ancient Myth",
+    "description": "大理石/翡翠材質、符文雕刻、神話史詩感",
+    "promptInjection": "weathered marble veining, jade green translucency, ancient rune engravings, moss patina on stone, atmospheric god rays through mist, epic mythological grandeur, aged bronze oxidation, ethereal divine glow",
+    "lighting": "soft dramatic god rays, ambient cave glow, cool moonlight rim, subsurface scattering on jade and marble",
+    "palette": "imperial jade #00A86B, aged marble #E8E0D0, oxidized bronze #6B4F2A, mystic violet #4B0082",
+    "materials": "white Carrara marble with grey veins, translucent nephrite jade, oxidized bronze patina, rough-cut obsidian, etched stone runes"
+  },
+  "candy_delight": {
+    "name": "Candy Delight",
+    "description": "透明糖果質感、Q彈渲染、清爽甜美色調",
+    "promptInjection": "translucent candy glass material, subsurface sugar scattering, jelly-soft 3D render, glossy pastel coating, rainbow caustic light, cheerful drop shadows, hard candy reflections, whipped cream textures",
+    "lighting": "bright cheerful overcast lighting, rainbow caustics, soft pastel fill lights, specular hotspot on glossy candy surface",
+    "palette": "bubblegum pink #FF69B4, mint green #98FF98, lemon yellow #FFF44F, sky blue #87CEEB, coral orange #FF7F50",
+    "materials": "translucent hard candy (glass shader), soft silicone jelly, matte frosted sugar, shiny wrapped foil, whipped cream foam"
+  }
+}

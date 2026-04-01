@@ -1,0 +1,55 @@
+# Generated Assets
+output/
+stress_test_zero_cost_output/
+test_output_phase4/
+real_stress_test_output/
+Slot_AI_Art_Generator/public/assets/previews/
+slots-studio.zip
+KnockoutClash_basegameL_資產出圖版本.psd
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+**/.claude/settings.local.json
+**/.next/
+**/node_modules/
+**/.hf-cache/
+
+# System
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+prompt_log.txt
+captured_prompt.txt
+
+# Temporary Files
+symbols_temp.json
+brain_memory.json
+*.tmp
+*.xlsx
+~$*
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.ag_synced
+out*.txt
+/Slot_AI_Art_Generator/claude_*.txt
+/scripts/crash_log.txt
+/test_*.png
+/verify_*.png

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asset Hub Control Panel</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #00f2ff;
+        --secondary: #7000ff;
+        --accent: #ff0055;
+        --bg: #050614;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --glass: rgba(255, 255, 255, 0.06);
+        --sidebar-bg: #0a0b1e;
+        --text: #ffffff;
+        --text-dim: #a0a0b8;
+        --success: #00ff66;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Outfit", sans-serif;
+      }
+
+      body {
+        background: var(--bg);
+        background-image:
+          radial-gradient(circle at 10% 10%, rgba(112, 0, 255, 0.1) 0%, transparent 40%),
+          radial-gradient(circle at 90% 90%, rgba(0, 242, 255, 0.1) 0%, transparent 40%);
+        color: var(--text);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      nav {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        background: var(--sidebar-bg);
+        border-bottom: 1px solid var(--glass);
+        backdrop-filter: blur(10px);
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      aside {
+        background: var(--sidebar-bg);
+        border-right: 1px solid var(--glass);
+        padding: 2rem;
+        overflow-y: auto;
+      }
+
+      main {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        overflow: hidden;
+      }
+
+      .section-title {
+        color: var(--primary);
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--glass);
+        border-radius: 16px;
+        padding: 1.5rem;
+        backdrop-filter: blur(5px);
+      }
+
+      .input-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        margin-bottom: 0.5rem;
+      }
+
+      input, select {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--glass);
+        border-radius: 8px;
+        padding: 0.8rem;
+        color: white;
+        font-size: 0.9rem;
+      }
+
+      .path-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 1rem;
+      }
+
+      .path-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.5rem 0.8rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        color: white;
+      }
+
+      .btn-danger {
+        background: rgba(255, 0, 85, 0.2);
+        color: var(--accent);
+        border: 1px solid rgba(255, 0, 85, 0.3);
+      }
+
+      .btn-icon {
+        background: transparent;
+        color: var(--text-dim);
+        padding: 4px;
+      }
+
+      .status-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+      }
+
+      .status-on { border: 1px solid var(--success); background: rgba(0, 255, 102, 0.05); }
+      .status-off { border: 1px solid var(--accent); background: rgba(255, 0, 85, 0.05); }
+
+      .console {
+        flex: 1;
+        background: #000;
+        border: 1px solid var(--glass);
+        border-radius: 12px;
+        padding: 1rem;
+        font-family: monospace;
+        font-size: 0.85rem;
+        color: #00f2ff;
+        overflow-y: auto;
+        white-space: pre-wrap;
+      }
+
+      .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+      .dot-on { background: var(--success); box-shadow: 0 0 8px var(--success); }
+      .dot-off { background: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">ASSET HUB ORCHESTRATOR</div>
+      <div style="font-size: 0.8rem; color: var(--primary)">獨立監控模式</div>
+    </nav>
+
+    <div class="container">
+      <aside>
+        <div id="status-card" class="status-banner status-off">
+            <div>
+                <span id="status-dot" class="dot dot-off"></span>
+                <span id="status-text">服務停止中</span>
+            </div>
+            <button id="toggle-btn" class="btn btn-primary" onclick="toggleService()">啟動監控</button>
+        </div>
+
+        <h3 class="section-title">⚙️ 設定與路徑</h3>
+        
+        <div class="input-group">
+            <label>監控目錄 (Watch Dirs)</label>
+            <div id="watch-dirs-list" class="path-list"></div>
+            <div style="display: flex; gap: 8px">
+                <input type="text" id="new-watch-dir" placeholder="輸入路徑...">
+                <button class="btn btn-primary" style="padding: 0.5rem" onclick="addWatchDir()">+</button>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>集中輸出路徑 (Target Dir)</label>
+            <input type="text" id="target-dir" onchange="saveConfig()">
+        </div>
+
+        <div class="input-group">
+            <label>衝突處理策略 (Strategy)</label>
+            <select id="conflict-strategy" onchange="saveConfig()">
+                <option value="smart_rename">智慧重新命名 (加前綴)</option>
+                <option value="overwrite">直接覆蓋</option>
+            </select>
+        </div>
+
+        <button class="btn btn-danger" style="width: 100%" onclick="saveConfig()">儲存並對齊設定</button>
+      </aside>
+
+      <main>
+        <h3 class="section-title">📟 系統即時日誌</h3>
+        <div id="console" class="console">等待服務啟動...</div>
+      </main>
+    </div>
+
+    <script>
+        // 動態偵測目前的 API 埠位 (如果是 WebView 執行，預設為 5082)
+        const API = window.location.port ? `http://localhost:${window.location.port}/api` : "http://localhost:5082/api";
+        let config = { watch_dirs: [], target_dir: "", conflict_strategy: "smart_rename" };
+
+        async function init() {
+            console.log("Initializing UI with API:", API);
+            await loadConfig();
+            pollStatus();
+            setInterval(pollStatus, 2000);
+            setInterval(pollLogs, 1500);
+        }
+
+        async function loadConfig() {
+            try {
+                const res = await fetch(`${API}/config`);
+                if (!res.ok) throw new Error("Server returned error");
+                const data = await res.json();
+                if (data && data.watch_dirs) {
+                    config = data;
+                }
+                renderConfig();
+            } catch (e) { 
+                console.error("Load config failed", e);
+                // 如果載入失敗，至少確保 renderConfig 不會崩潰
+                renderConfig();
+            }
+        }
+
+        function renderConfig() {
+            document.getElementById('target-dir').value = config.target_dir || "";
+            document.getElementById('conflict-strategy').value = config.conflict_strategy || "smart_rename";
+            
+            const list = document.getElementById('watch-dirs-list');
+            list.innerHTML = '';
+            
+            if (config.watch_dirs && Array.isArray(config.watch_dirs)) {
+                config.watch_dirs.forEach((dir, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'path-item';
+                    item.innerHTML = `
+                        <span style="word-break: break-all;">${dir}</span>
+                        <button class="btn-icon" onclick="removeWatchDir(${index})">✕</button>
+                    `;
+                    list.appendChild(item);
+                });
+            }
+        }
+
+        async function saveConfig() {
+            try {
+                config.target_dir = document.getElementById('target-dir').value;
+                config.conflict_strategy = document.getElementById('conflict-strategy').value;
+                
+                const res = await fetch(`${API}/config`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+                if (!res.ok) alert("儲存設定失敗！");
+            } catch (e) {
+                alert("連接伺服器失敗：" + e.message);
+            }
+        }
+
+        function addWatchDir() {
+            const input = document.getElementById('new-watch-dir');
+            if (input.value) {
+                config.watch_dirs.push(input.value);
+                input.value = '';
+                renderConfig();
+                saveConfig();
+            }
+        }
+
+        function removeWatchDir(index) {
+            config.watch_dirs.splice(index, 1);
+            renderConfig();
+            saveConfig();
+        }
+
+        async function pollStatus() {
+            try {
+                const res = await fetch(`${API}/status`);
+                const data = await res.json();
+                updateStatusUI(data.is_running);
+            } catch (e) {}
+        }
+
+        function updateStatusUI(isRunning) {
+            const banner = document.getElementById('status-card');
+            const dot = document.getElementById('status-dot');
+            const text = document.getElementById('status-text');
+            const btn = document.getElementById('toggle-btn');
+
+            if (isRunning) {
+                banner.className = 'status-banner status-on';
+                dot.className = 'dot dot-on';
+                text.innerText = '服務運行中';
+                btn.innerText = '停止服務';
+                btn.onclick = stopService;
+            } else {
+                banner.className = 'status-banner status-off';
+                dot.className = 'dot dot-off';
+                text.innerText = '服務停止中';
+                btn.innerText = '啟動監控';
+                btn.onclick = startService;
+            }
+        }
+
+        async function startService() {
+            await fetch(`${API}/start`, { method: 'POST' });
+        }
+
+        async function stopService() {
+            await fetch(`${API}/stop`, { method: 'POST' });
+        }
+
+        async function pollLogs() {
+            try {
+                const res = await fetch(`${API}/logs`);
+                const data = await res.json();
+                const consoleElem = document.getElementById('console');
+                if (data.logs.length > 0) {
+                    consoleElem.innerText = data.logs.join('\n');
+                    consoleElem.scrollTop = consoleElem.scrollHeight;
+                }
+            } catch (e) {}
+        }
+
+        init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+    def generate_image_from_api(self, prompt, output_path, mock=False, layout_mode="Cabinet", use_critic=True, aspect_ratio=None):
+        """[V13.0]  AI  API AI  (Auto-Critic) """
+        gemini_key = os.environ.get("GEMINI_API_KEY")
+        openai_key = os.environ.get("OPENAI_API_KEY")
+        
+        if self.stop_requested:
+            print("[STOP] [ENGINE] Image generation cancelled by user stop signal.")
+            return False
+
+        if mock:
+            print(f"DEBUG: Explicit Mock Mode for: {prompt[:30]}... with {layout_mode}")
+            self._generate_mock_image(prompt, output_path, layout_mode=layout_mode, aspect_ratio=aspect_ratio)
+            return
+
+        if not gemini_key and not openai_key:
+            print(f"WARNING: No API Keys found. Falling back to Mock.")
+            self._generate_mock_image(prompt, output_path, layout_mode=layout_mode, aspect_ratio=aspect_ratio)
+            return
+
+        critic = None
+        if use_critic and gemini_key:
+            try:
+                from scripts.ai_critic import AICritic
+                critic = AICritic(gemini_key)
+                print(f"[CRITIC] [Auto-Critic] Initialized.")
+            except Exception as e:
+                print(f"WARNING: Failed to init Critic: {e}")
+
+        max_retries = 3 if use_critic else 1
+        current_prompt = prompt
+        asset_name = os.path.basename(output_path)
+        print(f"\n[ARTIST] [AI Artist] {time.strftime('%H:%M:%S')} : {asset_name}")
+
+        for attempt in range(max_retries):
+            if attempt > 0:
+                print(f"[RETRY] Attempt {attempt+1}/{max_retries} with refined prompt...")
+
+            if self.stop_requested: break
+
+            success = False
+            # API Call Block
+            if gemini_key:
+                try:
+                    from google import genai
+                    from google.genai import types
+                    client = genai.Client(api_key=gemini_key)
+                    
+                    target_ar = "1:1"
+                    if aspect_ratio:
+                        target_ar = aspect_ratio
+                    else:
+                        target_ar = "9:16" if layout_mode == "H5_Mobile" else "16:9"
+                    
+                    # [V26.0] Model Quota Fallback
+                    imagen_models = ['gemini-2.0-flash-exp', 'imagen-3.0-generate-001']
+                    for img_model in imagen_models:
+                        try:
+                            # Using image generation model call pattern
+                            response = client.models.generate_images(
+                                model=img_model,
+                                prompt=current_prompt,
+                                config=types.GenerateImagesConfig(number_of_images=1, aspect_ratio=target_ar)
+                            )
+                            response.generated_images[0].image.save(output_path)
+                            print(f"[OK] Image saved via {img_model}")
+                            success = True
+                            break
+                        except Exception as e:
+                            print(f"[WARN] {img_model} failed: {e}")
+                            continue
+                except Exception as e:
+                    print(f"[FAIL] Gemini API failed: {e}")
+
+            if not success and openai_key:
+                try:
+                    import requests
+                    headers = {"Authorization": f"Bearer {openai_key}", "Content-Type": "application/json"}
+                    data = {"model": "dall-e-3", "prompt": current_prompt, "n": 1, "size": "1024x1024"}
+                    res = requests.post("https://api.openai.com/v1/images/generations", headers=headers, json=data)
+                    res.raise_for_status()
+                    img_url = res.json()['data'][0]['url']
+                    with open(output_path, 'wb') as f: f.write(requests.get(img_url).content)
+                    success = True
+                except: pass
+
+            if not success:
+                print(f"Falling back to Mock for: {output_path}")
+                self._generate_mock_image(prompt, output_path, layout_mode=layout_mode)
+                return 
+
+            # Critic & Tuner Block
+            if critic and success:
+                eval_result = critic.judge(output_path, current_prompt)
+                if eval_result['verdict'] == 'PASS':
+                    break
+                else:
+                    if attempt < max_retries - 1:
+                        try:
+                            from scripts.style_tuner import StyleTuner
+                            tuner = StyleTuner(gemini_key)
+                            current_prompt = tuner.tune(current_prompt, eval_result['reason'])
+                        except:
+                            current_prompt += f" FIX: {eval_result['reason']}"
+            else: break
+        return True
+
+    def _generate_mock_image(self, prompt, output_path, layout_mode="Cabinet", aspect_ratio=None):
+        from PIL import ImageDraw
+        import hashlib
+        fname = os.path.basename(output_path).upper()
+        color_hex = hashlib.md5(prompt.encode()).hexdigest()[:6]
+        base_color = tuple(int(color_hex[i:i+2], 16) for i in (0, 2, 4))
+        w, h = (1080, 1920) if layout_mode == "H5_Mobile" else (1280, 720)
+        img = Image.new('RGBA', (w, h), base_color + (255,))
+        draw = ImageDraw.Draw(img)
+        draw.text((w/2, h/2), fname, fill="white", anchor="mm")
+        img.save(output_path)
+        print(f"Hi-Fi Mock saved: {output_path}")
+
+    def process_transparency(self, input_path):
+        if not input_path or not os.path.exists(input_path): return input_path
+        output_path = input_path.replace(".png", "_transparent.png")
+        try:
+            from rembg import remove
+            with open(input_path, 'rb') as i:
+                input_data = i.read()
+                output_data = remove(input_data)
+                with open(output_path, 'wb') as o: o.write(output_data)
+            return output_path
+        except: return input_path
+
+    # ... Placeholder for piece4 (run_fully_autonomous)

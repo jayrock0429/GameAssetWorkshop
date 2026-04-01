@@ -1,0 +1,4 @@
+node_modules/
+output_assets/
+.env
+psd_dims.json

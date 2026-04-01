@@ -1,0 +1,60 @@
+Sheet 修訂紀錄:
+,Unnamed: 0,版本修訂紀錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+
+Sheet 目錄:
+,Unnamed: 0,企劃目錄,Unnamed: 2,Unnamed: 3
+26,,SYMBOL 設計,一般符號,M1
+38,,,SYMBOL 動態,M1
+
+Sheet 專案概述:
+,Unnamed: 0,專案概述  BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4
+
+Sheet 項目總覽:
+,Unnamed: 0,項目總覽  BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+7,,6,M1,,-,○,○
+
+Sheet 遊戲畫面簡介:
+,Unnamed: 0,遊戲畫面簡介  BACK to 目錄,Unnamed: 2,Unnamed: 3
+
+Sheet 介面(UI)設計:
+,Unnamed: 0,介面 (UI) 設計   BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,資產導出 - UI,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14
+
+Sheet Symbol設計:
+,Unnamed: 0,Symbols 設計   BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,資產導出 - 圖片,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17
+1,,Symbol 強度列表： C1 > WILD > M1 > M2 > M3 > M4 > M5 > M6 > M7 > M8,,,,,,,,,,,,,,,,
+6,,M1,,"5 : 12.00x
+4 : 4.00x
+3 : 1.20x","悟空
+1. 頭部特寫、需表現人物特徵。
+2. 符號帶外框。
+3. 代表色：橘+紅",Y,-,-,完全停輪後，若中獎含此符號，進行動態表演。,560,560,140,140,SYM_M1,Assets\SYM,,,V
+
+Sheet 動畫設計:
+,Unnamed: 0,動畫設計   BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,資產導出 - 動畫,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11
+12,,M1,,"悟空
+1. 做出瞬間移動的動作+手勢。
+","1.停輪後中獎：
+  ◆ 當盤面形成中獎組合，播放符號演出。
+  ◆ 2 秒，可循環。",-,N,,,,,
+
+Sheet Font 美術字:
+,Unnamed: 0,Font 美術字   BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,資產導出 - 美術字,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12
+
+Sheet Font 系統字:
+,Unnamed: 0,Font 系統字   BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,資產導出 - 系統字,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21
+
+Sheet 聲音規格:
+,Unnamed: 0,聲音規格   BACK to 目錄,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+37,,高賠倍符號,sym_m1,功能音,M1 中獎音效，主角一。,N,(00:02:00),,2024.08.22 更新,
+
+Sheet 場景:
+,Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+
+Sheet Buttons:
+,Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3
+
+Sheet Symbols:
+,Unnamed: 0,Unnamed: 1
+
+Sheet Game Info:
+,Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3

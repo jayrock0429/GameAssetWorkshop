@@ -1,0 +1,46 @@
+{
+  "3D_Premium": {
+    "label": "3D 商業精緻 (Premium)",
+    "prompt": "Unreal Engine 5 Render, Photorealistic PBR, High-Fidelity 3D Game Asset, Clean Lighting, Sharp Details, Cinematic Quality, 8k resolution, ray-traced reflections."
+  },
+  "Anime_Stylized": {
+    "label": "日系二次元 (Anime)",
+    "prompt": "Vibrant anime art style, cel-shaded, bold linework, high-contrast, fantasy aesthetic, hand-drawn quality, detailed background."
+  },
+  "PBR_Realistic": {
+    "label": "寫實擬真 (Realistic)",
+    "prompt": "Ultra-realistic 3D PBR textures, ray-traced reflections, photographic studio lighting, intricate mechanical details, macro photography."
+  },
+  "Flat_Modern": {
+    "label": "平面現代 (Flat)",
+    "prompt": "Clean vector art, flat design, minimalist shapes, bright solid colors, sharp edges, modern mobile game aesthetic, UI design."
+  },
+  "PG_Flagship": {
+    "label": "PG 旗艦級 (PG Flagship)",
+    "prompt": "PGslot flagship quality, modern high-quality casual casino game, 3D render, rim light, self-illuminating glow, bloom, high-contrast, rich saturated colors, optimized for portrait mobile."
+  },
+  "Cyberpunk_Neon": {
+    "label": "電馭叛客 (Cyberpunk)",
+    "prompt": "Cyberpunk aesthetic, neon sci-fi slot game UI, dark background with vibrant glowing neon cyan and pink lighting, metal grids, holographic elements, digital LED, 3D render, futuristic layout."
+  },
+  "Oriental_Wealth": {
+    "label": "東方財富 (Oriental Wealth)",
+    "prompt": "Asian casino theme, oriental wealth slot UI, rich gold and red colors, polished gold 3D elements, emerald jade details, traditional dragons and coins, luxurious glossy finish, high value."
+  },
+  "Ancient_Egypt": {
+    "label": "古埃及 (Ancient Egypt)",
+    "prompt": "Ancient Egypt mythology slot UI, layered architectural design, outer 24K polished gold shell with sharp rimlights, inner Lapis Lazuli blue inlays, weathered temple stone accents, glowing cyan energy cracks between materials, 3D beveled edges, majestic PBR textures, cinematic lighting."
+  },
+  "Sweet_Candy": {
+    "label": "甜美糖果 (Sweet & Candy)",
+    "prompt": "Sweet candy theme slot UI, high value pastel colors, gummy and translucent jelly textures, frosted cookies, rounded corners, soft lighting, cute casual game aesthetic, bouncy UI buttons."
+  },
+  "Classic_Vegas": {
+    "label": "經典維加斯 (Classic Vegas)",
+    "prompt": "Classic Vegas retro casino slot UI, marquee lights, red velvet, glowing warm bulbs, shiny plastic and chrome metal textures, mechanical 3D buttons, flashy jackpot aesthetics."
+  },
+  "Fantasy_Magic": {
+    "label": "奇幻魔法 (Fantasy Magic)",
+    "prompt": "Epic fantasy adventure slot UI, glowing magic crystals, dark forest green and deep purple hues, runic engravings, ancient spellbook textures, RPG magical interface, enchanting lighting."
+  }
+}

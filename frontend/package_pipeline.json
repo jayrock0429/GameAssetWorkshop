@@ -1,0 +1,14 @@
+{
+  "name": "slot-asset-pipeline",
+  "version": "1.0.0",
+  "description": "Automated pipeline for generating slot game assets using Gemini and Imagen",
+  "main": "slot_pipeline.js",
+  "scripts": {
+    "start": "node slot_pipeline.js"
+  },
+  "dependencies": {
+    "@google-cloud/vertexai": "^1.1.0",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0"
+  }
+}
